@@ -3,7 +3,7 @@ import CustomNavbar from './components/Navbar';
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <CustomNavbar />
     </div>
   );
