@@ -1,3 +1,13 @@
+### About this demo-react-app
+
+The purpose of this application is to be quickly familiar with `React.js` using the `create-react-app` command. 
+I want to be comfortable understanding the different layers of `React.js` as a frontend framework <i>(some call this as a frontend library, but I choose to see this as a frontend framework)</i>. 
+Furthermore, this application allows us to see about SPAs and MPAs.
+
+<b>The goal of this is to be familiar with `components`, `props`, and `hooks`.</b>
+
+<b>Lastly, I want to implement here <a href="https://reactpatterns.js.org/docs/component-injection/#:~:text=Passing%20(or%20inject)%20a%20component,component%20it's%20called%20Component%20Injection.">Component Injection</a></b>
+
 ### Important terminologies 
 
 <b>Single Page Applications (SPAs)</b> is website application concept where a user is interacting with an application that is dynamically rewriting the content as they use the UI elements (components). 
