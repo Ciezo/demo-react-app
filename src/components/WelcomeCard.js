@@ -3,7 +3,7 @@ import Header from "./Header";
 
 function WelcomeCard() {
   return (
-    <div className="container-sm mx-auto pt-5">
+    <div>
       <div className="p-4 p-md-5 border rounded-3 mb-5">
         <div className="text-center">
           <Header text={"✒️ Inkdown"} size={1} />
