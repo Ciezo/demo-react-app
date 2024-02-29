@@ -11,4 +11,7 @@ PHILIPPIANS 4:13
 ### Checklist: 
 
 - [x] Build the initial application 
+- [x] Add custom components
+- [x] Conditional rendering for components
+- [x] Components nesting
 - [x] Write a plan for this app
