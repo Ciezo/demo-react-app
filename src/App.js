@@ -1,6 +1,7 @@
 import CustomNavbar from "./components/Navbar";
 import WelcomeCard from "./components/WelcomeCard";
 import Cards from "./components/Cards";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -79,7 +80,7 @@ function App() {
           }
           isRowReverse={true}
         />
-        
+
         <Cards
           header={"Save, Edit, Remove, and Restore Notes"}
           body={
@@ -87,7 +88,7 @@ function App() {
           }
           isRowReverse={false}
         />
-        
+
         <Cards
           header={"The future of note taking"}
           body={
@@ -96,6 +97,7 @@ function App() {
           isRowReverse={true}
         />
       </div>
+      <Footer />
     </div>
   );
 }
