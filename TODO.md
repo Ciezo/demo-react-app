@@ -15,6 +15,7 @@ PHILIPPIANS 4:13
 - [x] Conditional rendering for components
 - [x] Components nesting
 - [x] Write a plan for this app
+- [] Integrate React Router
 - [] Add a footer component
 - [] Add Bootstrap forms to signup and login pages
 - [] Add a Signup page
