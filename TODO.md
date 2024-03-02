@@ -22,4 +22,7 @@ PHILIPPIANS 4:13
 - [x] Add a Login page
 - [x] Add GitHub Code of Conduct page 
 - [x] Add contribute page
-- [] Add links to the footer
+- [x] Add links to the footer
+- [x] Create a component for the "How we collect data page"
+- [x] Create page for "How we collect data"
+- [x] Define route for "/data-collection" 
