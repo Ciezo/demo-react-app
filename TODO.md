@@ -21,4 +21,4 @@ PHILIPPIANS 4:13
 - [x] Add a Signup page
 - [x] Add a Login page
 - [x] Add GitHub Code of Conduct page 
-- [] Add contribute page
+- [x] Add contribute page
