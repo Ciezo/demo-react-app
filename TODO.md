@@ -26,4 +26,4 @@ PHILIPPIANS 4:13
 - [x] Create a component for the "How we collect data page"
 - [x] Create page for "How we collect data"
 - [x] Define route for "/data-collection" 
-- [] Add hover animation in footer links
+- [x] Add hover animation in footer links
