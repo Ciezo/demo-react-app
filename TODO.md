@@ -4,7 +4,7 @@ PHILIPPIANS 4:13
 | -----------                                                         | -----------             |
 | <s>Write a plan on what this app is supposed to be</s>              | <s>February 29, 2024</s>| 
 | Write a proposal for technical and non-technical requirements       | March 4, 2024           | 
-| Integrate multi-page experience                                     | March 8, 2024           | 
+| <s>Integrate multi-page experience</s>                              | <s>March 8, 2024</s>   | 
 
 
 
@@ -20,3 +20,5 @@ PHILIPPIANS 4:13
 - [x] Add Bootstrap forms to signup and login pages
 - [x] Add a Signup page
 - [x] Add a Login page
+- [] Add GitHub Code of Conduct page 
+- [] Add contribute page
