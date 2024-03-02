@@ -20,5 +20,5 @@ PHILIPPIANS 4:13
 - [x] Add Bootstrap forms to signup and login pages
 - [x] Add a Signup page
 - [x] Add a Login page
-- [] Add GitHub Code of Conduct page 
-- [] Add contribute page
+- [x] Add GitHub Code of Conduct page 
+- [x] Add contribute page
