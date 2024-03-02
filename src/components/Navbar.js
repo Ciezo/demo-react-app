@@ -17,17 +17,11 @@ function CustomNavbar() {
               <Nav.Link as={Link} to="/signup">Signup</Nav.Link>
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
               <NavDropdown title="More" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="#license">License</NavDropdown.Item>
-                <NavDropdown.Item href="#terms_and_privacy">
-                  Terms & Privacy
-                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/license">License</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/terms-and-privacy">Terms & Privacy</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#code_of_conduct">
-                  Code of Conduct
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#contribute">
-                  Contribute
-                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/code-of-conduct">Code of Conduct</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/contribute">Contribute</NavDropdown.Item>
               </NavDropdown>
             </Nav>
             <Nav>
