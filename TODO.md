@@ -22,3 +22,4 @@ PHILIPPIANS 4:13
 - [x] Add a Login page
 - [x] Add GitHub Code of Conduct page 
 - [x] Add contribute page
+- [] Add links to the footer
