@@ -27,3 +27,7 @@ PHILIPPIANS 4:13
 - [x] Create page for "How we collect data"
 - [x] Define route for "/data-collection" 
 - [x] Add hover animation in footer links
+- [x] Study React.js Hooks 
+- [x] Implement `useState`
+- [x] Study form submission and input values
+- [x] Study how form input values are passed using <b>useState</b>   

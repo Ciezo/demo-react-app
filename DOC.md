@@ -30,6 +30,43 @@ In simple terms, MPAs based applications require multiple HTML files.
 > User interactions trigger full page reloads as they navigate between different sections.
 >The server handles rendering and serving different pages.
 
+<b>Hooks</b> are used by functional components to handle application states and its lifecycle methods.
+
+> In React, a Hook is a powerful feature that allows function components to hook into various React features, such as state management and lifecycle methods. Hooks were introduced in React 16.8 and have revolutionized how we write components.
+
+<u>Common built-in Hooks</u>
+<ul>
+    <li>`useState` Allows you to manage state within a functional component.</li>
+    <li>`useEffect:` Replaces lifecycle methods (such as componentDidMount, componentDidUpdate, and componentWillUnmount) for side effects (e.g., data fetching, subscriptions).</li>
+    <li>`useContext:` Provides access to the context API.</li>
+    <li>`useReducer:` An alternative to useState for more complex state management.</li>
+    <li>`useMemo and useCallback:` Optimize performance by memoizing values and functions.</li>
+</ul>
+
+<u>Rules for Using Hooks:</u>
+<ul>
+    <li>Hooks can only be called inside React function components.<li>
+    <li>Hooks must be called at the top level of a component (not inside loops, conditions, or nested functions).<li>
+    <li>Hooks cannot be conditional (i.e., their order cannot change based on conditions).<li>
+</ul>
+
+### Handling Form Data from User Input using Forms
+
+You can pass form values by capturing them when the user interacts with the form. Here are a few ways to achieve this:
+
+1. Using State (Functional Components with Hooks):
+- Create a state variable to store the value of the input.
+- Set an onChange event handler on the input to update the state variable when the input’s value changes.
+- Set an onSubmit event handler on the form element.
+- Access the value of the input field in the onSubmit event handler.
+
+2. Using FormData (Class Components):
+- Create a FormData object.
+- Append the input values to the FormData object.
+- Use the FormData object to send data to your server (e.g., via Axios).
+    - Using `axios` is a better implementation user input must be passed into a server
+    - Example: I can use `axios` to pass form values from React.js to a Spring Boot application
+
 <hr>
 
 ### SPAs vs MPAs 
