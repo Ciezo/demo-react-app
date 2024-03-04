@@ -66,7 +66,7 @@ function LoginForm() {
 
         {/* Password */}
         <Form.Group className="mb-3">
-          <FloatingLabel controlId="floatingInput" label="Username">
+          <FloatingLabel controlId="floatingInput" label="Password">
             <Form.Control 
             required 
             type="password" 
