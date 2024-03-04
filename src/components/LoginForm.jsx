@@ -35,6 +35,22 @@ function LoginForm() {
       event.stopPropagation();
       console.log("Errors detected!")
     } else {  // Otherwise, for now we can log them in the browser
+      /**
+       * @TODO (Hard deadline: March 15, 2024)
+       * - Here the front-end should send a request to the 
+       * backend to check if the user exists and can be authenticated.
+       * Moreover, the client (React.js) should wait for the back-end(Spring Boot)
+       * to send out if the user is true (Authenticated and Authorized).
+       * 
+       * The user should not wait longer than 1 minute or 10 seconds.
+       */
+
+
+      /**
+       * @TODO (Hard deadline: March 8, 2024)
+       * - For now, implement a mock-up JSON server to 
+       * fetch all user credentials for authentication and authorization.
+       */
       console.log([username, password])
     }
 
