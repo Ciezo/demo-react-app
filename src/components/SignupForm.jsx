@@ -31,13 +31,17 @@ function SignupForm() {
   const passwordErr = validatePassword(password); 
 
   const handleSubmit = (event) => {
+    // stop page reload
     event.preventDefault();
+    
     const form = event.currentTarget;
-    if (form.checkValidity() === false && firstNameErr) {
+    // If errors are detected then, don't send to backend
+    if (form.checkValidity() === false && firstNameErr && lastNameErr && usernameErr && passwordErr) {
       event.stopPropagation();
       console.log("Errors detected!")
-    } 
-    console.log([firstname, lastname, birthday, username, password])
+    } else {  // Otherwise, for now we can log them in the browser
+      console.log([firstname, lastname, birthday, username, password])
+    }
 
     setValidated(true);
   };
@@ -54,6 +58,8 @@ function SignupForm() {
             <Form.Control 
             required 
             type="text" 
+            minLength={5}
+            maxLength={10}
             value={firstname}
             onChange={handleFirstNameChange}
             placeholder="" />
@@ -70,6 +76,8 @@ function SignupForm() {
             <Form.Control 
             required 
             type="text" 
+            minLength={5}
+            maxLength={10}
             value={lastname}
             onChange={(e) => setLastName(e.target.value)}
             placeholder="" />
@@ -99,6 +107,8 @@ function SignupForm() {
           <FloatingLabel controlId="floatingInput" label="Username">
             <Form.Control required 
             type="text"
+            minLength={5}
+            maxLength={10}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             placeholder="name@example.com" />
@@ -114,10 +124,10 @@ function SignupForm() {
             <Form.Control 
             required 
             type="password" 
+            minLength={5}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="******" />
-
             <Form.Control.Feedback type="invalid">
               {passwordErr}
             </Form.Control.Feedback>

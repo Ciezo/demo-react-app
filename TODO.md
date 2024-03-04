@@ -34,5 +34,5 @@ PHILIPPIANS 4:13
 - [x] <b>Refactor the `class` keyword to `className`</b>  
 - Refactor my Forms
 - [] Implement form input validations.  
-    - [] Signup form
+    - [x] Signup form
     - [] Login form
