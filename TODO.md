@@ -32,7 +32,7 @@ PHILIPPIANS 4:13
 - [x] Study form submission and input values
 - [x] Study how form input values are passed using <b>useState</b> 
 - [x] <b>Refactor the `class` keyword to `className`</b>  
-- Refactor my Forms
-- [] Implement form input validations.  
+- [x] Refactor my Forms
+- [x] Implement form input validations.  
     - [x] Signup form
-    - [] Login form
+    - [x] Login form

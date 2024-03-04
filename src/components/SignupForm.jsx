@@ -23,8 +23,14 @@ function SignupForm() {
 
   const [validated, setValidated] = useState(false);
 
-  // Form validations
+  // Handle onChange
   const handleFirstNameChange = (e) => {setFirstName(e.target.value);};
+  const handleLastNameChange = (e) => {setLastName(e.target.value);};
+  const handleBirthdayChange = (e) => {setBirthday(e.target.value);};
+  const handleUsernameChange = (e) => {setUsername(e.target.value);};
+  const handlePasswordChange = (e) => {setPassword(e.target.value);};
+  
+  // Form validations
   const firstNameErr = validateFirstLastName(firstname);
   const lastNameErr = validateFirstLastName(lastname);
   const usernameErr = validateUserName(username);
@@ -79,7 +85,7 @@ function SignupForm() {
             minLength={5}
             maxLength={10}
             value={lastname}
-            onChange={(e) => setLastName(e.target.value)}
+            onChange={handleLastNameChange}
             placeholder="" />
             <Form.Control.Feedback type="invalid">
               {lastNameErr}
@@ -94,7 +100,7 @@ function SignupForm() {
             required 
             type="date" 
             value={birthday}
-            onChange={(e) => setBirthday(e.target.value)}
+            onChange={handleBirthdayChange}
             placeholder="" />
             <Form.Control.Feedback type="invalid">
               Please, provide birth date.
@@ -110,7 +116,7 @@ function SignupForm() {
             minLength={5}
             maxLength={10}
             value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={handleUsernameChange}
             placeholder="name@example.com" />
             <Form.Control.Feedback type="invalid">
               {usernameErr}
@@ -126,7 +132,7 @@ function SignupForm() {
             type="password" 
             minLength={5}
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={handlePasswordChange}
             placeholder="******" />
             <Form.Control.Feedback type="invalid">
               {passwordErr}
