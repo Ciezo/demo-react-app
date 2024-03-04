@@ -70,12 +70,11 @@ function CodeOfConductCard() {
             Community leaders are responsible for clarifying and enforcing our
             standards of acceptable behavior and will take appropriate and fair
             corrective action in response to any behavior that they deem
-            inappropriate, threatening, offensive, or harmful.
-            <div className="mb-3" />
-            Community leaders have the right and responsibility to remove, edit,
-            or reject comments, commits, code, wiki edits, issues, and other
-            contributions that are not aligned to this Code of Conduct, and will
-            communicate reasons for moderation decisions when appropriate.
+            inappropriate, threatening, offensive, or harmful. Community leaders
+            have the right and responsibility to remove, edit, or reject
+            comments, commits, code, wiki edits, issues, and other contributions
+            that are not aligned to this Code of Conduct, and will communicate
+            reasons for moderation decisions when appropriate.
           </p>
           <h5 className="lead">Scope</h5>
           <p>
@@ -90,11 +89,13 @@ function CodeOfConductCard() {
           <p>
             Instances of abusive, harassing, or otherwise unacceptable behavior
             may be reported to the community leaders responsible for enforcement
-            at <email>cloydvansecuya@gmail.com</email> All complaints will be
-            reviewed and investigated promptly and fairly.
-            <div className="mb-3" />
-            All community leaders are obligated to respect the privacy and
-            security of the reporter of any incident.
+            at{" "}
+            <a href="mailto:cloydvansecuya@gmail.com">
+              <b>cloydvansecuya@gmail.com</b>
+            </a>{" "}
+            All complaints will be reviewed and investigated promptly and
+            fairly. All community leaders are obligated to respect the privacy
+            and security of the reporter of any incident.
           </p>
           <h5 className="lead">Enforcement Guidelines</h5>
           <p>
@@ -106,7 +107,6 @@ function CodeOfConductCard() {
           <p>
             **Community Impact**: Use of inappropriate language or other
             behavior deemed unprofessional or unwelcome in the community.
-            <div className="mb-3" />
             **Consequence**: A private, written warning from community leaders,
             providing clarity around the nature of the violation and an
             explanation of why the behavior was inappropriate. A public apology
@@ -115,36 +115,32 @@ function CodeOfConductCard() {
           <h6>2. Warning</h6>
           <p>
             **Community Impact**: A violation through a single incident or
-            series of actions.
-            <div className="mb-3" />
-            **Consequence**: A warning with consequences for continued behavior.
-            No interaction with the people involved, including unsolicited
-            interaction with those enforcing the Code of Conduct, for a
-            specified period of time. This includes avoiding interactions in
-            community spaces as well as external channels like social media.
-            Violating these terms may lead to a temporary or permanent ban.
+            series of actions. **Consequence**: A warning with consequences for
+            continued behavior. No interaction with the people involved,
+            including unsolicited interaction with those enforcing the Code of
+            Conduct, for a specified period of time. This includes avoiding
+            interactions in community spaces as well as external channels like
+            social media. Violating these terms may lead to a temporary or
+            permanent ban.
           </p>
           <h6>3. Temporary Ban</h6>
           <p>
             **Community Impact**: A serious violation of community standards,
-            including sustained inappropriate behavior.
-            <div className="mb-3" />
-            **Consequence**: A temporary ban from any sort of interaction or
-            public communication with the community for a specified period of
-            time. No public or private interaction with the people involved,
-            including unsolicited interaction with those enforcing the Code of
-            Conduct, is allowed during this period. Violating these terms may
-            lead to a permanent ban.
+            including sustained inappropriate behavior. **Consequence**: A
+            temporary ban from any sort of interaction or public communication
+            with the community for a specified period of time. No public or
+            private interaction with the people involved, including unsolicited
+            interaction with those enforcing the Code of Conduct, is allowed
+            during this period. Violating these terms may lead to a permanent
+            ban.
           </p>
           <h6>4. Permanent Ban</h6>
           <p>
             **Community Impact**: Demonstrating a pattern of violation of
             community standards, including sustained inappropriate behavior,
             harassment of an individual, or aggression toward or disparagement
-            of classes of individuals.
-            <div className="mb-3" />
-            **Consequence**: A permanent ban from any sort of public interaction
-            within the community.
+            of classes of individuals. **Consequence**: A permanent ban from any
+            sort of public interaction within the community.
           </p>
           <h5 className="lead">Attribution</h5>
           <p>
