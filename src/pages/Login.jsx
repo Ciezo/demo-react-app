@@ -19,6 +19,7 @@ function Login() {
           <div className="col-md-10 mx-auto col-lg-5">
             <LoginForm />
           </div>
+          <div className="my-5"></div>
         </div>
       </div>
     </>
