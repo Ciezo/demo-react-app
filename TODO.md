@@ -5,6 +5,7 @@ PHILIPPIANS 4:13
 | <s>Write a plan on what this app is supposed to be</s>              | <s>February 29, 2024</s>| 
 | <s>Write a proposal for technical and non-technical requirements</s>| <s>March 4, 2024</s>    | 
 | <s>Integrate multi-page experience</s>                              | <s>March 8, 2024</s>    | 
+| Implement a mock-up JSON server                                     | March 8, 2024           |
 
 
 
