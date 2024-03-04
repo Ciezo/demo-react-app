@@ -37,3 +37,9 @@ PHILIPPIANS 4:13
 - [x] Implement form input validations.  
     - [x] Signup form
     - [x] Login form
+
+- [] Set a cookie for the username to name it after the route
+- [] Add a route for user's home based on their username
+    - Ex: /{username}/home
+        - /cloydvan/home
+- [] Add a redirect home page to user's home once logged-in
