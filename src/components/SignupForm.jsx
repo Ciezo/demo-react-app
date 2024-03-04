@@ -3,9 +3,9 @@ import { useState } from "react";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { validateFirstLastName } from "../utils/validations/ValidateFirstLastName";
-import { validateUserName } from "../utils/validations/ValidateUserName";
-import { validatePassword } from "../utils/validations/ValidatePassword";
+import { validateFirstLastName } from "../utils/ValidateFirstLastName";
+import { validateUserName } from "../utils/ValidateUserName";
+import { validatePassword } from "../utils/ValidatePassword";
 
 function SignupForm() {
   // Form values
