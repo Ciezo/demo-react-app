@@ -11,7 +11,7 @@ import { MdViewList } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
 import { IoLogOut } from "react-icons/io5";
 
-function UserHomeNavbar() {
+function UserHomeNavbar({ username }) {
   return (
     <>
       <Card border="dark">
@@ -23,10 +23,12 @@ function UserHomeNavbar() {
             <Nav className="me-auto">
               <Form.Control size="md" type="text" placeholder="Search..." />
             </Nav>
-            <Nav className="mx-5">
-              <Nav.Link href-="#my_account"><RxAvatar /> My Account</Nav.Link>
+            <Nav>
+              <Nav.Link href-="/home/my-account"><RxAvatar /> My Account</Nav.Link>
             </Nav> 
             <NavDropdown title="More" id="collapsible-nav-dropdown">
+              <NavDropdown.Item><b>{`Hello, ${username}!`}</b></NavDropdown.Item>
+              <NavDropdown.Divider />
               <NavDropdown.Item href="#refresh"><RiRefreshFill /> Refresh</NavDropdown.Item>
               <NavDropdown.Item href="#list_view"><MdViewList /> List View</NavDropdown.Item>
               <NavDropdown.Item href="#setting"><AiFillSetting /> Setting</NavDropdown.Item>

@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import { getUserCookie } from "../utils/GetUserCookie";
 import UserHomeNavbar from "../components/UserHomeNavbar";
 
@@ -8,9 +7,9 @@ function UserHome() {
 
   return (
     <>
-      <UserHomeNavbar />
+      <UserHomeNavbar 
+      username={usernameCookie}/>
       <div className="container-sm mx-auto pt-5">
-        <Header text={`test, ${usernameCookie}`} size={2} />
       </div>
     </>
   );

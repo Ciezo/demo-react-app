@@ -45,4 +45,6 @@ PHILIPPIANS 4:13
 - [x] Add a redirect home page to user's home once logged-in
 - [] Design the UserHome page 
     - Inspired by keep.google.com
-    - [] Create `UserHomeNavbar` component    
+    - [x] Create `UserHomeNavbar` component
+    - [] Create the Sidebar for notes and trash pages
+    - [] Create the notes area     
