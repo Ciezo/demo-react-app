@@ -53,7 +53,7 @@ function LoginForm() {
        * fetch all user credentials for authentication and authorization.
        */
       console.log([username, password])
-      if(true) {
+      if(!usernameErr && !passwordErr) {
         UserCookie(username);
         navigate("/username/home")
       }
