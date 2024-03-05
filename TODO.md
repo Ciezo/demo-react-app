@@ -42,4 +42,4 @@ PHILIPPIANS 4:13
 - [] Add a route for user's home based on their username
     -  /{username}/home
        Ex: - /cloydvan/home
-- [] Add a redirect home page to user's home once logged-in
+- [x] Add a redirect home page to user's home once logged-in
