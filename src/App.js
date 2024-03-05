@@ -11,6 +11,7 @@ import TermsAndPrivacy from "./pages/TermsAndPrivacy";
 import CodeOfConduct from "./pages/CodeOfConduct";
 import Contribute from "./pages/Contribute";
 import DataCollection from "./pages/DataCollection";
+import UserHome from "./pages/UserHome";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/code-of-conduct" Component={CodeOfConduct} />
           <Route path="/contribute" Component={Contribute} />
           <Route path="/data-collection" Component={DataCollection} />
+          <Route path="/username/home" Component={UserHome} />
         </Routes>
         <Footer />
       </div>

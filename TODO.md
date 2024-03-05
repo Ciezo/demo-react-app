@@ -40,6 +40,6 @@ PHILIPPIANS 4:13
 
 - [] Set a cookie for the username to name it after the route
 - [] Add a route for user's home based on their username
-    - Ex: /{username}/home
-        - /cloydvan/home
+    -  /{username}/home
+       Ex: - /cloydvan/home
 - [] Add a redirect home page to user's home once logged-in

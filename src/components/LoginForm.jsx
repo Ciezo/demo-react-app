@@ -5,11 +5,9 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { validateUserName } from "../utils/ValidateUserName";
 import { validatePassword } from "../utils/ValidatePassword";
-/**
- * 
- * @todo March 5, 2024 
- * REFACTOR THIS INTO REACT-BOOTSTRAP
- */
+import { UserCookie } from "../utils/UserCookie";
+import { useNavigate } from "react-router-dom";
+
 function LoginForm() {
 
   const [username, setUsername] = useState("");
@@ -24,6 +22,9 @@ function LoginForm() {
   // Form validations
   const usernameErr = validateUserName(username);
   const passwordErr = validatePassword(password); 
+
+  // Redirection to user/home
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     // stop page reload
@@ -52,6 +53,10 @@ function LoginForm() {
        * fetch all user credentials for authentication and authorization.
        */
       console.log([username, password])
+      if(true) {
+        UserCookie(username);
+        navigate("/username/home")
+      }
     }
 
     setValidated(true);
