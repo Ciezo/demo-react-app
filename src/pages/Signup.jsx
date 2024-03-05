@@ -1,9 +1,12 @@
 import React from "react";
 import SignupForm from "../components/SignupForm";
+import CustomNavbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Signup() {
   return (
     <>
+      <CustomNavbar />
       <div className="container col-xl-10 col-xxl-10 px-4 py-5">
         <div className="row align-items-center g-lg-5 py-5">
           <div className="col-lg-7 text-center text-lg-start">
@@ -23,6 +26,7 @@ function Signup() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

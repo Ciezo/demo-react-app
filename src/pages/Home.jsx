@@ -1,10 +1,13 @@
 import React from 'react';
 import WelcomeCard from '../components/WelcomeCard'
 import Cards from "../components/Cards";
+import CustomNavbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
     <>
+    <CustomNavbar />
     <div className="container-sm mx-auto pt-5">
           <WelcomeCard />
           <Cards
@@ -95,6 +98,7 @@ function Home() {
             isRowReverse={true}
           />
         </div>
+      <Footer />
     </>
   );
 }

@@ -1,6 +1,3 @@
-import CustomNavbar from "./components/Navbar";
-import Footer from "./components/Footer";
-
 // App routing
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -17,7 +14,6 @@ function App() {
   return (
     <Router>
       <div className="content">
-        <CustomNavbar />
         <Routes>
           <Route path="/" Component={Home} />
           <Route path="/signup" Component={Signup} />
@@ -29,7 +25,6 @@ function App() {
           <Route path="/data-collection" Component={DataCollection} />
           <Route path="/username/home" Component={UserHome} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );
