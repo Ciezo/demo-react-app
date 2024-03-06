@@ -49,4 +49,5 @@ PHILIPPIANS 4:13
     - [x] Create the Sidebar for notes and trash pages
         > It is better to use a custom Sidebar component for this project
         - <s>[] Added `flowbite-react` library to include Sidebar component...</s>
-    - [] Create the notes area     
+    - [x] Create the UI for notes area
+    - [] Add `state management` and functionality to the `NotesEditor`

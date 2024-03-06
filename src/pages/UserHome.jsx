@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { getUserCookie } from "../utils/GetUserCookie";
 import UserHomeNavbar from "../components/UserHomeNavbar";
 import Sidebar from "../components/Sidebar";
+import NotesEditor from "../components/NotesEditor";
 
 function UserHome() {
   let usernameCookie = getUserCookie("username");
@@ -21,7 +22,7 @@ function UserHome() {
 
             <Col lg={10} className="mx-auto my-2">
               <Container className="d-flex justify-content-center">
-                <textarea placeholder="Enter note here..."></textarea>
+                <NotesEditor />
               </Container>
             </Col>
           </Row>
