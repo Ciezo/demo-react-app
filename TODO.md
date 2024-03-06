@@ -52,3 +52,6 @@ PHILIPPIANS 4:13
     - [x] Create the UI for notes area
     - [x] Add `state management` and functionality to the `NotesEditor`
     - [x] Create a `NotesCard` component to render and display all notes..
+
+- [] User sessions and management 
+    - [x] Implement Logout function

@@ -10,8 +10,18 @@ import { RiRefreshFill } from "react-icons/ri";
 import { MdViewList } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
 import { IoLogOut } from "react-icons/io5";
+import { Outlet, Link, useNavigate } from "react-router-dom";
+import { removeUserCookie } from "../utils/RemoveUserCookie";
 
 function UserHomeNavbar({ username }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    // Destroying userInfo
+    removeUserCookie("username");
+    navigate("/login");
+  }
+
   return (
     <>
       <Card border="dark">
@@ -24,7 +34,7 @@ function UserHomeNavbar({ username }) {
               <Form.Control size="md" type="text" placeholder="Search..." />
             </Nav>
             <Nav>
-              <Nav.Link href-="/home/my-account"><RxAvatar /> My Account</Nav.Link>
+              <Nav.Link as={Link} to="/username/my-account"><RxAvatar /> My Account</Nav.Link>
             </Nav> 
             <NavDropdown title="More" id="collapsible-nav-dropdown">
               <NavDropdown.Item><b>{`Hello, ${username}!`}</b></NavDropdown.Item>
@@ -32,12 +42,13 @@ function UserHomeNavbar({ username }) {
               <NavDropdown.Item href="#refresh"><RiRefreshFill /> Refresh</NavDropdown.Item>
               <NavDropdown.Item href="#list_view"><MdViewList /> List View</NavDropdown.Item>
               <NavDropdown.Item href="#setting"><AiFillSetting /> Setting</NavDropdown.Item>
-              <NavDropdown.Item href="#logout"><IoLogOut /> Logout</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleLogout}><IoLogOut /> Logout</NavDropdown.Item>
             </NavDropdown>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       </Card>
+      <Outlet />
     </>
   );
 }
