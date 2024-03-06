@@ -47,4 +47,5 @@ PHILIPPIANS 4:13
     - Inspired by keep.google.com
     - [x] Create `UserHomeNavbar` component
     - [] Create the Sidebar for notes and trash pages
+        - [] Added `flowbite-react` library to include Sidebar component...
     - [] Create the notes area     
