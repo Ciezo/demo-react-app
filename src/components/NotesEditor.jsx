@@ -8,9 +8,7 @@ import { BiSolidAddToQueue } from "react-icons/bi";
 /**
  *
  * @TODO March 6, 2024
- * - Implement handleChange to add notes
- * - Implement onSubmit to handle form submissions
- * - Implement onClick for the button
+ * - When the Spring Boot backend is finished add a POST method to onSubmit
  */
 function NotesEditor(props) {
   // This state is used to expand and contract the form
@@ -51,7 +49,11 @@ function NotesEditor(props) {
 
   return (
     <Card style={{ width: "50rem" }} className="p-2 my-3 editor">
-      <Form>
+      <Form
+      // FOR NOW THIS IS A REMINDER FOR ONCE THE BACKEND IS FINISHED
+        // method="POST"
+        // action=""
+      >
         {/* This will expand upon onClick */}
         <Form.Group className="mb-3" controlId="input.NoteTitle">
           {isExpanded && (
