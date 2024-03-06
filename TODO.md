@@ -47,5 +47,6 @@ PHILIPPIANS 4:13
     - Inspired by keep.google.com
     - [x] Create `UserHomeNavbar` component
     - [] Create the Sidebar for notes and trash pages
-        - [] Added `flowbite-react` library to include Sidebar component...
+        > It is better to use a custom Sidebar component for this project
+        - <s>[] Added `flowbite-react` library to include Sidebar component...</s>
     - [] Create the notes area     
