@@ -30,6 +30,13 @@ In simple terms, MPAs based applications require multiple HTML files.
 > User interactions trigger full page reloads as they navigate between different sections.
 >The server handles rendering and serving different pages.
 
+<b>Components</b> are small units of UI elements which can be reusable across the application.
+
+<u>Two ways to declare React.js components:</u>
+
+1. `const Sidebar = () => {...// component logic}`  
+2. `function Sidebar() {...// component logic}` 
+
 <b>Hooks</b> are used by functional components to handle application states and its lifecycle methods.
 
 > In React, a Hook is a powerful feature that allows function components to hook into various React features, such as state management and lifecycle methods. Hooks were introduced in React 16.8 and have revolutionized how we write components.
