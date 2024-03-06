@@ -38,15 +38,13 @@ function UserHome() {
               {/* Render the submitted user notes displayed as cards */}
               <Container fluid>
                 <Row className="p-2 mx-auto">
-                  <Col className="mb-3" xs={3}>
-                    {notes.map((note, index) => (
-                      <NotesCard
-                        key={index}
-                        title={note.title}
-                        body={note.body}
-                      />
-                    ))}
-                  </Col>
+                  {notes.map((note, index) => (
+                    <NotesCard
+                      key={index}
+                      title={note.title}
+                      body={note.body}
+                    />
+                  ))}
                 </Row>
               </Container>
             </Col>
