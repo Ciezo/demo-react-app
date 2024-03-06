@@ -5,6 +5,7 @@ import UserHomeNavbar from "../components/UserHomeNavbar";
 import Sidebar from "../components/Sidebar";
 import NotesEditor from "../components/NotesEditor";
 import { useState } from "react";
+import NotesCard from "../components/NotesCard";
 
 function UserHome() {
   let usernameCookie = getUserCookie("username");
@@ -33,6 +34,20 @@ function UserHome() {
               <Container className="d-flex justify-content-center">
                 {/* Here is where the user submits their notes */}
                 <NotesEditor onAdd={addNote} />
+              </Container>
+              {/* Render the submitted user notes displayed as cards */}
+              <Container fluid>
+                <Row className="p-2 mx-auto">
+                  <Col className="mb-3" xs={3}>
+                    {notes.map((note, index) => (
+                      <NotesCard
+                        key={index}
+                        title={note.title}
+                        body={note.body}
+                      />
+                    ))}
+                  </Col>
+                </Row>
               </Container>
             </Col>
           </Row>

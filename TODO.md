@@ -51,4 +51,4 @@ PHILIPPIANS 4:13
         - <s>[] Added `flowbite-react` library to include Sidebar component...</s>
     - [x] Create the UI for notes area
     - [x] Add `state management` and functionality to the `NotesEditor`
-    - [] Create a `NotesCard` component to render and display all notes..
+    - [x] Create a `NotesCard` component to render and display all notes..
