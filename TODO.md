@@ -50,4 +50,4 @@ PHILIPPIANS 4:13
         > It is better to use a custom Sidebar component for this project
         - <s>[] Added `flowbite-react` library to include Sidebar component...</s>
     - [x] Create the UI for notes area
-    - [] Add `state management` and functionality to the `NotesEditor`
+    - [x] Add `state management` and functionality to the `NotesEditor`
