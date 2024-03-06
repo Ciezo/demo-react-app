@@ -55,3 +55,6 @@ PHILIPPIANS 4:13
 
 - [] User sessions and management 
     - [x] Implement Logout function
+
+- [x] Design Trash page
+- [x] Design Archive page

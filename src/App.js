@@ -9,6 +9,8 @@ import CodeOfConduct from "./pages/CodeOfConduct";
 import Contribute from "./pages/Contribute";
 import DataCollection from "./pages/DataCollection";
 import UserHome from "./pages/UserHome";
+import UserNotesArchive from "./pages/UserNotesArchive";
+import UserNotesTrash from "./pages/UserNotesTrash";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/contribute" Component={Contribute} />
           <Route path="/data-collection" Component={DataCollection} />
           <Route path="/username/home" Component={UserHome} />
+          <Route path="/username/archive" Component={UserNotesArchive} />
+          <Route path="/username/trash" Component={UserNotesTrash} />
         </Routes>
       </div>
     </Router>

@@ -20,12 +20,12 @@ function Sidebar() {
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/archive">
+              <Nav.Link href="/username/archive">
                 <BsArchiveFill className="mr-2" /> Archive
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/trash">
+              <Nav.Link href="/username/trash">
                 <BsFillTrashFill className="mr-2" /> Trash
               </Nav.Link>
             </Nav.Item>
