@@ -38,12 +38,12 @@ PHILIPPIANS 4:13
     - [x] Signup form
     - [x] Login form
 
-- [] Set a cookie for the username to name it after the route
-- [] Add a route for user's home based on their username
+- <s>[] Set a cookie for the username to name it after the route</s>
+- <s>[] Add a route for user's home based on their username</s>
     -  /{username}/home
        Ex: - /cloydvan/home
 - [x] Add a redirect home page to user's home once logged-in
-- [] Design the UserHome page 
+- [x] Design the UserHome page 
     - Inspired by keep.google.com
     - [x] Create `UserHomeNavbar` component
     - [x] Create the Sidebar for notes and trash pages
