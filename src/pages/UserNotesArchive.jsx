@@ -12,21 +12,19 @@ function UserNotesArchive() {
       <UserHomeNavbar username={usernameCookie} />
 
       {/* Main user content goes here */}
-      <main>
-        <Container fluid="lg">
-          <Row>
-            <Col xs={2}>
-              <Sidebar />
-            </Col>
+      <Container fluid="lg" className="px-auto my-5">
+        <Row>
+          <Col xs={2}>
+            <Sidebar />
+          </Col>
 
-            <Col lg={10} className="mx-auto my-2">
-              <Container className="d-flex justify-content-center">
-                Archive
-              </Container>
-            </Col>
-          </Row>
-        </Container>
-      </main>
+          <Col lg={10} className="mx-auto my-2">
+            <Container className="d-flex justify-content-center">
+              Archive
+            </Container>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }
