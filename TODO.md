@@ -60,8 +60,9 @@ PHILIPPIANS 4:13
 - [x] Design Archive page
 
 - [] JSON Mockup Server
-    - [] Initialize the package for JSON MOCK REST API server
-    - [] Create `db.json` 
+    - [x] Initialize the package for JSON MOCK REST API server
+        - [x] Install and run it globally 
+    - [x] Create `db.json` 
     - [] POST REQUESTS to the mock up server
         - [] POST user registrations from `SignupForm.jsx`
         - [] POST {title, body} for Notes from user

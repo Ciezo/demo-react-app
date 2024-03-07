@@ -1,7 +1,9 @@
 {
     "posts": [
       { "id": 1, "title": "Hello, World!" },
-      { "id": 2, "title": "Mocking APIs" }
+      { "id": 2, "title": "Mocking APIs" },
+      { "id": 3, "title": "Mocking APIs 2" },
+      { "id": 4, "title": "Mocking APIs 3" }
     ]
   }
   
