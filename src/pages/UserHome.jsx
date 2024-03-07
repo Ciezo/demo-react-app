@@ -23,34 +23,28 @@ function UserHome() {
       <UserHomeNavbar username={usernameCookie} />
 
       {/* Main user content goes here */}
-      <main>
-        <Container fluid="lg">
-          <Row>
-            <Col xs={2}>
-              <Sidebar />
-            </Col>
+      <Container fluid className="px-auto my-5">
+        <Row>
+          <Col xs={2}>
+            <Sidebar />
+          </Col>
 
-            <Col lg={10} className="mx-auto my-2">
-              <Container className="d-flex justify-content-center">
-                {/* Here is where the user submits their notes */}
-                <NotesEditor onAdd={addNote} />
-              </Container>
-              {/* Render the submitted user notes displayed as cards */}
-              <Container fluid>
-                <Row className="p-2 mx-auto">
-                  {notes.map((note, index) => (
-                    <NotesCard
-                      key={index}
-                      title={note.title}
-                      body={note.body}
-                    />
-                  ))}
-                </Row>
-              </Container>
-            </Col>
-          </Row>
-        </Container>
-      </main>
+          <Col lg={10} className="mx-auto my-2">
+            <Container className="d-flex justify-content-center">
+              {/* Here is where the user submits their notes */}
+              <NotesEditor onAdd={addNote} className="mt-5"/>
+            </Container>
+            {/* Render the submitted user notes displayed as cards */}
+            <Container fluid>
+              <Row className="p-2 mx-auto">
+                {notes.map((note, index) => (
+                  <NotesCard key={index} title={note.title} body={note.body} />
+                ))}
+              </Row>
+            </Container>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

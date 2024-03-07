@@ -7,7 +7,7 @@ function Login() {
   return (
     <>
       <CustomNavbar />
-      <div className="container col-xl-10 col-xxl-10 px-4 py-5">
+      <div className="container col-xl-10 col-xxl-10 px-4 py-5 my-5">
         <div className="row align-items-center g-lg-5 py-5">
           <div className="col-lg-7 text-center text-lg-start">
             <h1 className="display-4 fw-bold lh-1 text-body-emphasis mb-3">

@@ -8,7 +8,7 @@ function Home() {
   return (
     <>
     <CustomNavbar />
-    <div className="container-sm mx-auto pt-5">
+    <div className="container-sm mx-auto pt-5 my-5">
           <WelcomeCard />
           <Cards
             header={"Unleash Your Creativity"}

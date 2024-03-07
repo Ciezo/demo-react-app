@@ -7,7 +7,7 @@ import { Outlet, Link } from "react-router-dom";
 function CustomNavbar() {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+      <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
         <Container>
           <Navbar.Brand href="#home">✒️ Inkdown</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />

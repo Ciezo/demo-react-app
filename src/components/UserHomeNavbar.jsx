@@ -24,8 +24,7 @@ function UserHomeNavbar({ username }) {
 
   return (
     <>
-      <Card border="dark">
-      <Navbar sticky="top" collapseOnSelect expand="lg" bg="light" data-bs-theme="light">
+      <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" data-bs-theme="light" className="border">
         <Container>
           <Navbar.Brand href="">✒️ Inkdown</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -47,7 +46,6 @@ function UserHomeNavbar({ username }) {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      </Card>
       <Outlet />
     </>
   );
