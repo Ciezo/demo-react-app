@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { validateFirstLastName } from "../utils/ValidateFirstLastName";
 import { validateUserName } from "../utils/ValidateUserName";
 import { validatePassword } from "../utils/ValidatePassword";
+import Alert from "react-bootstrap/Alert";
 
 function SignupForm() {
   // Form values
@@ -36,6 +37,9 @@ function SignupForm() {
   const usernameErr = validateUserName(username);
   const passwordErr = validatePassword(password); 
 
+  // Success prompt to notify user on successful registration
+  const [isNotified, setNotified] = useState(false);
+
   const handleSubmit = (event) => {
     // stop page reload
     event.preventDefault();
@@ -45,8 +49,18 @@ function SignupForm() {
     if (form.checkValidity() === false && firstNameErr && lastNameErr && usernameErr && passwordErr) {
       event.stopPropagation();
       console.log("Errors detected!")
-    } else {  // Otherwise, for now we can log them in the browser
-      console.log([firstname, lastname, birthday, username, password])
+    } else {  // Otherwise, register the user thru fetch()
+      const user = {firstname, lastname, birthday, username, password};
+      fetch('http://localhost:3001/users', {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json' },
+        body: JSON.stringify(user) 
+      })
+      .then(() => {
+        setNotified(true);
+        console.log("User registered");
+        console.log(user);
+      });
     }
 
     setValidated(true);
@@ -54,6 +68,9 @@ function SignupForm() {
 
   return (
     <>
+      {isNotified && (
+        <Alert variant={"success"}>You are now registered!</Alert>
+      )}
       <Form 
         noValidate 
         validated={validated} 

@@ -1,57 +1,77 @@
 {
   "demo": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Hello, World!"
     },
-    { 
-      "id": 2, 
-      "title": "Mocking APIs" 
+    {
+      "id": "2",
+      "title": "Mocking APIs"
     },
-    { 
-      "id": 3, 
-      "title": "Mocking APIs 2" 
+    {
+      "id": "3",
+      "title": "Mocking APIs 2"
     },
-    { 
-      "id": 4, 
-      "title": "Mocking APIs 3" 
+    {
+      "id": "4",
+      "title": "Mocking APIs 3"
     }
   ],
-
-  "users":[
+  "users": [
     {
-      "id": 0,
-      "firstname": "John", 
+      "id": "0",
+      "firstname": "John",
       "lastname": "Doe",
       "birthday": "1999-01-01",
       "username": "john.doe@domain.com",
       "password": "123456789"
+    },
+    {
+      "id": "1c3a",
+      "firstname": "Ciezo",
+      "lastname": "Sugondese",
+      "birthday": "2002-02-27",
+      "username": "ciezo",
+      "password": "12345678"
+    },
+    {
+      "id": "d8f5",
+      "firstname": "Cloyd Van",
+      "lastname": "Secuya",
+      "birthday": "2002-02-27",
+      "username": "cloydvan",
+      "password": "12345678"
+    },
+    {
+      "id": "b8fe",
+      "firstname": "Cloyd Van",
+      "lastname": "Secuya",
+      "birthday": "2002-02-27",
+      "username": "cloyd",
+      "password": "12345678"
     }
   ],
-
-  "notes":[
+  "notes": [
     {
-      "id": 0,
+      "id": "0",
       "title": "Title test 0",
       "body": "The quick brown fox jumps over the lazy dog.",
       "author": "john.doe@domain.com"
     }
-  ], 
-
-  "notes-archive":[
+  ],
+  "notes-archive": [
     {
-      "id": 0,
+      "id": "0",
       "title": "Title test 0",
       "body": "The quick brown fox jumps over the lazy dog.",
       "author": "john.doe@domain.com"
     }
-  ], 
-
-  "notes-trash":[
+  ],
+  "notes-trash": [
     {
-      "id": 0,
+      "id": "0",
       "title": "Title test 0",
-      "body":"The quick brown fox jumps over the lazy dog.",
+      "body": "The quick brown fox jumps over the lazy dog.",
       "author": "john.doe@domain.com"
     }
   ]
