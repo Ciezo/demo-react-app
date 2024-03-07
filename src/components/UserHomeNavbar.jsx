@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form';
 import { AiFillSetting } from "react-icons/ai";
 import { RiRefreshFill } from "react-icons/ri";
