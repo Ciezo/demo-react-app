@@ -8,6 +8,13 @@ Furthermore, this application allows us to see about SPAs and MPAs.
 
 <b>Lastly, I want to implement here <a href="https://reactpatterns.js.org/docs/component-injection/#:~:text=Passing%20(or%20inject)%20a%20component,component%20it's%20called%20Component%20Injection.">Component Injection</a></b>
 
+### `npx` vs `npm`
+
+`Node.js` is a JavaScript runtime environment that can run on Windows, Linux, and other OSes. It is used to handle JavaScript packages, modules (node_modules), and running scripts.
+
+`npx` is a <b>package executor</b> used to run packages in a project or workstation without installing them locally in the computer.
+`npm` is a <b>package management</b> used to install, uninstall, and update JavaScript packages on your workstation.
+
 ### Important terminologies 
 
 <b>Single Page Applications (SPAs)</b> is website application concept where a user is interacting with an application that is dynamically rewriting the content as they use the UI elements (components). 
