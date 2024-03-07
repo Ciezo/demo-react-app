@@ -1,3 +1,7 @@
+/**
+ * @note This is just a test and demo 
+ * of using Express.js 
+ */
 const express = require("express");
 const app = express();
 const port = 3002;

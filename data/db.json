@@ -16,5 +16,16 @@
       "id": 4, 
       "title": "Mocking APIs 3" 
     }
+  ],
+
+  "users":[
+    {
+      "id": 0,
+      "firstname": "John", 
+      "lastname": "Doe",
+      "birthday": "1999-01-01",
+      "username": "john.doe@domain.com",
+      "password": "123456789"
+    }
   ]
 }
