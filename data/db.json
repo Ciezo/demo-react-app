@@ -27,5 +27,32 @@
       "username": "john.doe@domain.com",
       "password": "123456789"
     }
+  ],
+
+  "notes":[
+    {
+      "id": 0,
+      "title": "Title test 0",
+      "body": "The quick brown fox jumps over the lazy dog.",
+      "author": "john.doe@domain.com"
+    }
+  ], 
+
+  "notes-archive":[
+    {
+      "id": 0,
+      "title": "Title test 0",
+      "body": "The quick brown fox jumps over the lazy dog.",
+      "author": "john.doe@domain.com"
+    }
+  ], 
+
+  "notes-trash":[
+    {
+      "id": 0,
+      "title": "Title test 0",
+      "body":"The quick brown fox jumps over the lazy dog.",
+      "author": "john.doe@domain.com"
+    }
   ]
 }

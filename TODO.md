@@ -63,6 +63,10 @@ PHILIPPIANS 4:13
     - [x] Initialize the package for JSON MOCK REST API server
         - [x] Install and run it globally 
     - [x] Create `db.json` 
+        - [x] Create endpoints for Users
+        - [x] Create endpoints for Notes
+        - [x] Create endpoints for NotesArchive
+        - [x] Create endpoints for NotesTrash
     - [] POST REQUESTS to the mock up server
         - [] POST user registrations from `SignupForm.jsx`
         - [] POST {title, body} for Notes from user
