@@ -67,6 +67,11 @@ PHILIPPIANS 4:13
         - [x] Create endpoints for Notes
         - [x] Create endpoints for NotesArchive
         - [x] Create endpoints for NotesTrash
-    - [] POST REQUESTS to the mock up server
+    - [] POST REQUESTS to the json-server
         - [x] POST user registrations from `SignupForm.jsx`
         - [x] POST {title, body, author} for Notes from user
+        - [] POST `NotesCard.jsx` {title, body, author} to endpoint: "/notes-archive"
+        - [] POST `NotesCard.jsx` {title, body, author} to trash: "/notes-trash"
+
+    - [] DELETE REQUESTS to the json-server
+        - [] On `UserNotesTrash.jsx` all rendered `NotesCard.jsx` can be deleted upon clicking a delete button
