@@ -9,6 +9,7 @@ function NotesCard(props) {
         <Card style={{ width: "15rem" }}>
           <Card.Body>
             <Card.Title>{props.title}</Card.Title>
+            <small><p><i>By: {props.author}</i></p></small>
             <Card.Text>{props.body}</Card.Text>
           </Card.Body>
         </Card>

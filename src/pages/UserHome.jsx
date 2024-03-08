@@ -38,7 +38,7 @@ function UserHome() {
             <Container fluid>
               <Row className="p-2 mx-auto">
                 {notes.map((note, index) => (
-                  <NotesCard key={index} title={note.title} body={note.body} />
+                  <NotesCard key={index} title={note.title} author={note.author} body={note.body} />
                 ))}
               </Row>
             </Container>
