@@ -74,6 +74,6 @@ PHILIPPIANS 4:13
             - Update `NotesCard.jsx` component to include an archive button
         - [x] POST `NotesCard.jsx` {title, body, author} to trash: "/notes-trash"
             - Update `NotesCard.jsx` component to include an trash button
-    
+- [] Update the `NotesCard.jsx` to disappear upon moving to either archive or trash
     - [] DELETE REQUESTS to the json-server
         - [] On `UserNotesTrash.jsx` all rendered `NotesCard.jsx` can be deleted upon clicking a delete button
