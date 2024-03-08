@@ -8,7 +8,10 @@ import { useState } from "react";
 import NotesCard from "../components/NotesCard";
 
 function UserHome() {
-  let usernameCookie = getUserCookie("username");
+  const setAuthor = () => {
+    const author = getUserCookie("username");
+    return author;
+  };
 
   const [notes, setNote] = useState([]);
 
@@ -20,7 +23,7 @@ function UserHome() {
 
   return (
     <>
-      <UserHomeNavbar username={usernameCookie} />
+      <UserHomeNavbar username={setAuthor()} />
 
       {/* Main user content goes here */}
       <Container fluid className="px-auto my-5">
@@ -32,13 +35,18 @@ function UserHome() {
           <Col lg={10} className="mx-auto my-2">
             <Container className="d-flex justify-content-center">
               {/* Here is where the user submits their notes */}
-              <NotesEditor onAdd={addNote} className="mt-5"/>
+              <NotesEditor onAdd={addNote} className="mt-5" />
             </Container>
             {/* Render the submitted user notes displayed as cards */}
             <Container fluid>
               <Row className="p-2 mx-auto">
                 {notes.map((note, index) => (
-                  <NotesCard key={index} title={note.title} author={note.author} body={note.body} />
+                  <NotesCard
+                    key={index}
+                    title={note.title}
+                    body={note.body}
+                    author={note.author}
+                  />
                 ))}
               </Row>
             </Container>

@@ -18,16 +18,15 @@ function NotesEditor(props) {
    * The attributes title and body are from the Form,
    * while the author is an assigned value based on the username cookie
    */
-  const [note, setNote] = useState({ title: "", body: "", author: "" });
-
-  const expand = () => {
-    setExpand(true);
-  };
-
   const setAuthor = () => {
     const author = getUserCookie("username");
     return author;
   }
+  const [note, setNote] = useState({ title: "", body: "", author: setAuthor() });
+
+  const expand = () => {
+    setExpand(true);
+  };
 
   const handleChange = (event) => {
     // `name` is the name of the input field
@@ -42,7 +41,6 @@ function NotesEditor(props) {
   }; 
 
   const addNote = () => {
-    setAuthor();            // this function is called before the note state because it is not part of the form
     props.onAdd(note);
     setNote({ title: "", body: "", author: setAuthor() });
     fetch('http://localhost:3001/notes', {
