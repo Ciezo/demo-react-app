@@ -69,4 +69,4 @@ PHILIPPIANS 4:13
         - [x] Create endpoints for NotesTrash
     - [] POST REQUESTS to the mock up server
         - [x] POST user registrations from `SignupForm.jsx`
-        - [] POST {title, body} for Notes from user
+        - [x] POST {title, body, author} for Notes from user

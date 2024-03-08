@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { BiSolidAddToQueue } from "react-icons/bi";
+import { getUserCookie } from "../utils/GetUserCookie";
 
 /**
  *
@@ -13,12 +14,20 @@ import { BiSolidAddToQueue } from "react-icons/bi";
 function NotesEditor(props) {
   // This state is used to expand and contract the form
   const [isExpanded, setExpand] = useState(false);
-  // This state allows us to save submitted notes 
-  const [note, setNote] = useState({ title: "", body: "" });
+  /**
+   * The attributes title and body are from the Form,
+   * while the author is an assigned value based on the username cookie
+   */
+  const [note, setNote] = useState({ title: "", body: "", author: "" });
 
   const expand = () => {
     setExpand(true);
   };
+
+  const setAuthor = () => {
+    const author = getUserCookie("username");
+    return author;
+  }
 
   const handleChange = (event) => {
     // `name` is the name of the input field
@@ -30,19 +39,23 @@ function NotesEditor(props) {
         [name]: value,
       };
     });
-  };
+  }; 
 
   const addNote = () => {
+    setAuthor();            // this function is called before the note state because it is not part of the form
     props.onAdd(note);
-    setNote({ title: "", body: "" });
-    console.log([note.title, note.body])
+    setNote({ title: "", body: "", author: setAuthor() });
+    fetch('http://localhost:3001/notes', {
+        method: 'POST',
+        headers: { 'Content-Type' : 'application/json' },
+        body: JSON.stringify(note) 
+      })
+      .then(() => {
+        console.log([note.title, note.body, note.author])
+      });
   };
 
   const handleSubmit = (event) => {
-    /**
-     * @note HERE WE CAN POST THE REQUEST TO BACKEND SERVER
-     * BUT FOR NOW THERE IS NONE BECAUSE I AM STILL WORKING ON THIS...
-     */
     addNote();
     event.preventDefault();
   };
@@ -50,9 +63,7 @@ function NotesEditor(props) {
   return (
     <Card style={{ width: "50rem" }} className="p-2 my-3 editor">
       <Form
-      // FOR NOW THIS IS A REMINDER FOR ONCE THE BACKEND IS FINISHED
-        // method="POST"
-        // action=""
+        onSubmit={handleSubmit}
       >
         {/* This will expand upon onClick */}
         <Form.Group className="mb-3" controlId="input.NoteTitle">
