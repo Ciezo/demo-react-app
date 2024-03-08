@@ -71,7 +71,9 @@ PHILIPPIANS 4:13
         - [x] POST user registrations from `SignupForm.jsx`
         - [x] POST {title, body, author} for Notes from user
         - [] POST `NotesCard.jsx` {title, body, author} to endpoint: "/notes-archive"
+            - Update `NotesCard.jsx` component to include an archive button
         - [] POST `NotesCard.jsx` {title, body, author} to trash: "/notes-trash"
+            - Update `NotesCard.jsx` component to include an trash button
 
     - [] DELETE REQUESTS to the json-server
         - [] On `UserNotesTrash.jsx` all rendered `NotesCard.jsx` can be deleted upon clicking a delete button
