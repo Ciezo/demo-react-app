@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Col } from "react-bootstrap";
 import { FaBoxArchive } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa6";
-import { Button, ButtonGroup } from 'react-bootstrap';
+import { Button, ButtonGroup } from "react-bootstrap";
 
 function NotesCard(props) {
   const { title, body, author } = props;
   const note = { title, body, author };
+
+  // This state helps with rendering a NotesCard component,
+  // and it helps with the visibility of the card.
+  // If a NoteCard is archived or trashed, then remove it from the page.
+  const [isArchivedOrTrashed, setNoteCardVisibility] = useState(true);
 
   const archiveNote = () => {
     /**
@@ -22,6 +27,7 @@ function NotesCard(props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
     }).then(() => {
+      setNoteCardVisibility(false);
       console.log("note moved to archived.");
     });
   };
@@ -38,12 +44,13 @@ function NotesCard(props) {
       body: JSON.stringify(note),
     }).then(() => {
       console.log("note moved to trash.");
+      setNoteCardVisibility(false);
     });
   };
 
   return (
     <>
-      <Col xs={3} className="mb-3">
+      {isArchivedOrTrashed && <Col xs={3} className="mb-3">
         <Card style={{ width: "15rem" }}>
           <Card.Body>
             <Card.Title>{title}</Card.Title>
@@ -63,7 +70,7 @@ function NotesCard(props) {
             </Button>
           </ButtonGroup>
         </Card>
-      </Col>
+      </Col>}
     </>
   );
 }
