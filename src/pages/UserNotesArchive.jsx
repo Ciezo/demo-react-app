@@ -3,7 +3,7 @@ import UserHomeNavbar from "../components/UserHomeNavbar";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
 import { getUserCookie } from "../utils/GetUserCookie";
-import NotesCard from "../components/NotesCard";
+import NotesCardOnArchive from "../components/NotesCardOnArchive";
 
 function UserNotesArchive() {
   let usernameCookie = getUserCookie("username");
@@ -36,14 +36,15 @@ function UserNotesArchive() {
           </Col>
 
           <Col lg={10} className="mx-auto my-2">
+            <p className="lead">Archived notes by {usernameCookie}</p>
             {isError && <p className="lead">An error occurred no archive notes found...</p>}
             <Container className="d-flex justify-content-center">
               {!isError && (
                 <Row className="p-2 mx-auto">
                   {archiveNotes.map((note, index) => (
-                    <NotesCard
+                    <NotesCardOnArchive
                       key={index}
-                      id={index}
+                      id={note.id}
                       title={note.title}
                       body={note.body}
                       author={note.author}
