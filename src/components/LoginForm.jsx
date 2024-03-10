@@ -53,7 +53,7 @@ function LoginForm() {
        * fetch all user credentials for authentication and authorization.
        */
       if(!usernameErr && !passwordErr) {
-        UserCookie(username);
+        UserCookie("username", username);
         navigate("/username/home")
       }
     }
