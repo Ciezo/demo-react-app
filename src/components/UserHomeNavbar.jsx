@@ -17,7 +17,7 @@ function UserHomeNavbar({ username }) {
 
   const handleLogout = () => {
     // Destroying userInfo
-    removeUserCookie("username");
+    removeUserCookie();
     navigate("/login");
   }
 

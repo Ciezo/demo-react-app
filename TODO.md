@@ -80,4 +80,4 @@ PHILIPPIANS 4:13
 - [x] Display the archived notes card on `UserNotesArchive.jsx`
 - [x] Display the trash notes card on `UserNotesTrash.jsx`
 
-- [] Fix problems with user cookie and paths
+- [x] Fix problems with user cookie and paths

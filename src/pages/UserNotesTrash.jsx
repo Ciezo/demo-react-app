@@ -6,10 +6,14 @@ import { getUserCookie } from "../utils/GetUserCookie";
 import NotesCardOnTrash from "../components/NotesCardOnTrash";
 
 function UserNotesTrash() {
-  let usernameCookie = getUserCookie("username");
-
+  const [username, setUsername] = useState("");
   const [trashNotes, setTrashNotes] = useState([]);
   const [isError, setError] = useState(false);
+
+  useEffect(() => {
+    const usernameCookie = getUserCookie("username");
+    setUsername(usernameCookie);
+  }, []);
 
   // Check the :8001/notes-trash endpoint if there are any archived notes
   useEffect(() => {
@@ -26,7 +30,7 @@ function UserNotesTrash() {
 
   return (
     <>
-      <UserHomeNavbar username={usernameCookie} />
+      <UserHomeNavbar username={username} />
 
       {/* Main user content goes here */}
       <Container fluid="lg" className="px-auto my-5">
@@ -36,7 +40,7 @@ function UserNotesTrash() {
           </Col>
 
           <Col lg={10} className="mx-auto my-2">
-            <p className="lead">Trash notes by {usernameCookie}</p>
+            <p className="lead">Trash notes by {username}</p>
             {isError && <p className="lead">No trash notes found...</p>}
             <Container className="d-flex justify-content-center">
               {!isError && (

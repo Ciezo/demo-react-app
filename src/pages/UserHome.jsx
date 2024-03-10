@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { getUserCookie } from "../utils/GetUserCookie";
 import UserHomeNavbar from "../components/UserHomeNavbar";
@@ -8,14 +8,15 @@ import { useState } from "react";
 import NotesCard from "../components/NotesCard";
 
 function UserHome() {
-  const setAuthor = () => {
-    const author = getUserCookie("username");
-    return author;
-  };
-
+  const [username, setUsername] = useState("");
   const [notes, setNote] = useState([]);
 
-  function addNote(newNote) {
+  useEffect(() => {
+    const usernameCookie = getUserCookie("username");
+    setUsername(usernameCookie);
+  }, []);
+
+  const addNote = (newNote) => {
     setNote((prevValue) => {
       return [...prevValue, newNote];
     });
@@ -23,7 +24,7 @@ function UserHome() {
 
   return (
     <>
-      <UserHomeNavbar username={setAuthor()} />
+      <UserHomeNavbar username={username} />
 
       {/* Main user content goes here */}
       <Container fluid className="px-auto my-5">
