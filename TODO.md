@@ -77,3 +77,5 @@ PHILIPPIANS 4:13
 - [x] Update the `NotesCard.jsx` to disappear upon moving to either archive or trash
     - [] DELETE REQUESTS to the json-server
         - [] On `UserNotesTrash.jsx` all rendered `NotesCard.jsx` can be deleted upon clicking a delete button
+- [x] Display the archived notes card on `UserNotesArchive.jsx`
+- [] Display the trash notes card on `UserNotesTrash.jsx`
