@@ -24,7 +24,7 @@ function NotesCard(props) {
   // This state helps with rendering a NotesCard component,
   // and it helps with the visibility of the card.
   // If a NoteCard is archived or trashed, then remove it from the page.
-  const [isArchivedOrTrashed, setNoteCardVisibility] = useState(true);
+  const [isArchivedOrTrashed, setNoteCardVisibility] = useState(false);
 
   const archiveNote = () => {
     /**
@@ -39,7 +39,7 @@ function NotesCard(props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
     }).then(() => {
-      setNoteCardVisibility(false);
+      setNoteCardVisibility(true);
       console.log("note moved to archived.");
     });
   };
@@ -62,7 +62,7 @@ function NotesCard(props) {
 
   return (
     <>
-      {isArchivedOrTrashed && <Col xs={3} className="mb-3">
+      {!isArchivedOrTrashed && <Col xs={3} className="mb-3">
         <Card style={{ width: "15rem" }}>
           <Card.Body>
             <Card.Title>{title}</Card.Title>

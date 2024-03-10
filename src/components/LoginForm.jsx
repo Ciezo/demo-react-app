@@ -52,7 +52,6 @@ function LoginForm() {
        * - For now, implement a mock-up JSON server to 
        * fetch all user credentials for authentication and authorization.
        */
-      console.log([username, password])
       if(!usernameErr && !passwordErr) {
         UserCookie(username);
         navigate("/username/home")

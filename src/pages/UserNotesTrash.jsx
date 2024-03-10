@@ -3,7 +3,7 @@ import UserHomeNavbar from "../components/UserHomeNavbar";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
 import { getUserCookie } from "../utils/GetUserCookie";
-import NotesCard from "../components/NotesCard";
+import NotesCardOnTrash from "../components/NotesCardOnTrash";
 
 function UserNotesTrash() {
   let usernameCookie = getUserCookie("username");
@@ -17,7 +17,6 @@ function UserNotesTrash() {
       .then((res) => res.json())
       .then((data) => {
         setTrashNotes(data);
-        console.log(data);
       })
       .catch((error) => {
         setError(true);
@@ -42,9 +41,9 @@ function UserNotesTrash() {
               {!isError && (
                 <Row className="p-2 mx-auto">
                   {trashNotes.map((note, index) => (
-                    <NotesCard
+                    <NotesCardOnTrash
                       key={index}
-                      id={index}
+                      id={note.id}
                       title={note.title}
                       body={note.body}
                       author={note.author}
