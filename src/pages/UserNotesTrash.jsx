@@ -11,9 +11,9 @@ function UserNotesTrash() {
   const [trashNotes, setTrashNotes] = useState([]);
   const [isError, setError] = useState(false);
 
-  // Check the :3001/notes-trash endpoint if there are any archived notes
+  // Check the :8001/notes-trash endpoint if there are any archived notes
   useEffect(() => {
-    fetch("http://localhost:3001/notes-trash")
+    fetch("http://localhost:8001/notes-trash")
       .then((res) => res.json())
       .then((data) => {
         setTrashNotes(data);

@@ -51,7 +51,7 @@ function SignupForm() {
       console.log("Errors detected!")
     } else {  // Otherwise, register the user thru fetch()
       const user = {firstname, lastname, birthday, username, password};
-      fetch('http://localhost:3001/users', {
+      fetch('http://localhost:8001/users', {
         method: 'POST',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify(user) 

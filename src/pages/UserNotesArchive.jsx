@@ -11,9 +11,9 @@ function UserNotesArchive() {
   const [archiveNotes, setArchiveNotes] = useState([]);
   const [isError, setError] = useState(false);
 
-  // Check the :3001/notes-archive endpoint if there are any archived notes
+  // Check the :8001/notes-archive endpoint if there are any archived notes
   useEffect(() => {
-    fetch("http://localhost:3001/notes-archive")
+    fetch("http://localhost:8001/notes-archive")
       .then((res) => res.json())
       .then((data) => {
         setArchiveNotes(data);

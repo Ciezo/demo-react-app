@@ -34,7 +34,7 @@ function NotesCard(props) {
      *
      * It simply is used for safe-keeping. */
     // Store all archived notes in this endpoint
-    fetch("http://localhost:3001/notes-archive", {
+    fetch("http://localhost:8001/notes-archive", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
@@ -50,7 +50,7 @@ function NotesCard(props) {
      * But, upon here we just try to move them into the trash resource
      */
     // Store all trashed notes (can be deleted) at this endpoint
-    fetch("http://localhost:3001/notes-trash", {
+    fetch("http://localhost:8001/notes-trash", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),

@@ -43,7 +43,7 @@ function NotesEditor(props) {
   const addNote = () => {
     props.onAdd(note);
     setNote({ title: "", body: "", author: setAuthor() });
-    fetch('http://localhost:3001/notes', {
+    fetch('http://localhost:8001/notes', {
         method: 'POST',
         headers: { 'Content-Type' : 'application/json' },
         body: JSON.stringify(note) 

@@ -21,7 +21,7 @@ function NotesCardOnTrash(props) {
   // Remove the note card component once deleted.
   const [isNoteDeleted, setNoteCardVisibility] = useState(false);
   const deleteNote = () => {
-    fetch("http://localhost:3001/notes-trash/" + note.id, {
+    fetch("http://localhost:8001/notes-trash/" + note.id, {
       method: "DELETE",
     }).then(() => { setNoteCardVisibility(true); })
       .catch((error) => { console.error(error); });
