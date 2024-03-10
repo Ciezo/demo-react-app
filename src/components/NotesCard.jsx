@@ -55,8 +55,8 @@ function NotesCard(props) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
     }).then(() => {
+      setNoteCardVisibility(true);
       console.log("note moved to trash.");
-      setNoteCardVisibility(false);
     });
   };
 

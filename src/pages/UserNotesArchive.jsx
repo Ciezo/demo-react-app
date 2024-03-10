@@ -36,7 +36,7 @@ function UserNotesArchive() {
           </Col>
 
           <Col lg={10} className="mx-auto my-2">
-            {isError && <p className="lead">No arhive notes found...</p>}
+            {isError && <p className="lead">An error occurred no archive notes found...</p>}
             <Container className="d-flex justify-content-center">
               {!isError && (
                 <Row className="p-2 mx-auto">
