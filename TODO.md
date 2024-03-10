@@ -78,4 +78,4 @@ PHILIPPIANS 4:13
     - [] DELETE REQUESTS to the json-server
         - [] On `UserNotesTrash.jsx` all rendered `NotesCard.jsx` can be deleted upon clicking a delete button
 - [x] Display the archived notes card on `UserNotesArchive.jsx`
-- [] Display the trash notes card on `UserNotesTrash.jsx`
+- [x] Display the trash notes card on `UserNotesTrash.jsx`
