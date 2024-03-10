@@ -1,3 +1,15 @@
+/**
+ * @author Cloyd Van Secuya
+ * <p>
+ * This component shall be used over the http://localhost:3000/username/home page.
+ * 
+ * `NotesCard.jsx` is responsible for the following: 
+ *  - 1. Displaying the submitted notes over the home page which what the user directly sees.
+ *  - 2. Moving a note to /archive for archiving through POST
+ *  - 3. Moving a note to /trash for removal through POST, but 
+ *       please keep in mind the note is not deleted yet.
+ * </p>
+ */
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 import { Col } from "react-bootstrap";
