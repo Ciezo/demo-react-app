@@ -38,7 +38,7 @@ function NotesCard(props) {
      * But, upon here we just try to move them into the trash resource
      */
     // Store all trashed notes (can be deleted) at this endpoint
-    fetch("http://localhost:3001/notes-archive", {
+    fetch("http://localhost:3001/notes-trash", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
