@@ -36,6 +36,7 @@ function UserNotesTrash() {
           </Col>
 
           <Col lg={10} className="mx-auto my-2">
+            <p className="lead">Trash notes by {usernameCookie}</p>
             {isError && <p className="lead">No trash notes found...</p>}
             <Container className="d-flex justify-content-center">
               {!isError && (
