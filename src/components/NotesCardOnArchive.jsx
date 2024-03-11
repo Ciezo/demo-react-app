@@ -28,6 +28,15 @@ function NotesCardOnArchive(props) {
         body: JSON.stringify(note) 
       })
       .then(() => { setNoteCardVisibility(true); })
+      // Remove the original archived note from this resource
+      .then(() => {
+        fetch("http://localhost:8001/notes-archive/" + note.id, {
+          method: "DELETE",
+        }).catch((error) => {
+          console.log("Cannot delete original note from /notes endpoint");
+          console.log(error)
+        })
+      })
       .catch((error) => { console.error(error); });
   };
 
