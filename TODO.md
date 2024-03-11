@@ -59,7 +59,7 @@ PHILIPPIANS 4:13
 - [x] Design Trash page
 - [x] Design Archive page
 
-- [] JSON Mockup Server
+- [x] JSON Mockup Server
     - [x] Initialize the package for JSON MOCK REST API server
         - [x] Install and run it globally 
     - [x] Create `db.json` 
@@ -81,3 +81,7 @@ PHILIPPIANS 4:13
 - [x] Display the trash notes card on `UserNotesTrash.jsx`
 
 - [x] Fix problems with user cookie and paths
+
+- [] Fix styling, layouts, and positions
+    - [] Fix containers for notes card components
+         - The Rows and Columns should be fixed...I think it is better to use a grid line
