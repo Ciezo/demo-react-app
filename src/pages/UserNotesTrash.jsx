@@ -42,7 +42,7 @@ function UserNotesTrash() {
           <Col lg={10} className="mx-auto my-2">
             <p className="lead">Trash notes by {username}</p>
             {isError && <p className="lead">No trash notes found...</p>}
-            <Container className="d-flex justify-content-center">
+            <Container fluid>
               {!isError && (
                 <Row className="p-2 mx-auto">
                   {trashNotes.map((note, index) => (

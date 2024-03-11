@@ -42,7 +42,7 @@ function UserNotesArchive() {
           <Col lg={10} className="mx-auto my-2">
             <p className="lead">Archived notes by {username}</p>
             {isError && <p className="lead">An error occurred no archive notes found...</p>}
-            <Container className="d-flex justify-content-center">
+            <Container fluid>
               {!isError && (
                 <Row className="p-2 mx-auto">
                   {archiveNotes.map((note, index) => (
