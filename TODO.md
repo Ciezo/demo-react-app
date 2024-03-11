@@ -54,6 +54,12 @@ PHILIPPIANS 4:13
     - [x] Create a `NotesCard` component to render and display all notes..
 
 - [] User sessions and management 
+    
+    <b>Use `fetch()` api to handle user requests and response to integrate my backend app (Spring Boot)</b>
+    
+        - I decided to use this because I need to learn about parsing json objects manually. Additionally,
+        `fetch()` api can work with modern browsers and does not need more dependencies than `axios()` api.
+
     - [x] Implement Logout function
     - [] <b>Register</b> users using the Spring Boot backend 
         - At (http://localhost:18080/api/v1/auth/register) 
