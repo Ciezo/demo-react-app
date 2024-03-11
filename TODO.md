@@ -55,6 +55,8 @@ PHILIPPIANS 4:13
 
 - [] User sessions and management 
     - [x] Implement Logout function
+    - [] <b>Register</b> users using the Spring Boot backend 
+        - At (http://localhost:18080/api/v1/auth/register) 
 
 - [x] Design Trash page
 - [x] Design Archive page
