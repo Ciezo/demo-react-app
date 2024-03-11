@@ -6,21 +6,37 @@ import Sidebar from "../components/Sidebar";
 import NotesEditor from "../components/NotesEditor";
 import { useState } from "react";
 import NotesCard from "../components/NotesCard";
+import Alert from "react-bootstrap/Alert";
 
 function UserHome() {
   const [username, setUsername] = useState("");
   const [notes, setNote] = useState([]);
+  const [isError, setError] = useState(false);
 
+  /** Setting the username based on username cookie */
   useEffect(() => {
     const usernameCookie = getUserCookie("username");
     setUsername(usernameCookie);
+  }, []);
+
+  /** Fetch all stored notes from the database */
+  useEffect(() => {
+    fetch("http://localhost:8001/notes")
+      .then((res) => res.json())
+      .then((data) => {
+        setNote(data);
+      })
+      .catch((error) => {
+        setError(true);
+        console.error(error);
+      });
   }, []);
 
   const addNote = (newNote) => {
     setNote((prevValue) => {
       return [...prevValue, newNote];
     });
-  }
+  };
 
   return (
     <>
@@ -38,8 +54,16 @@ function UserHome() {
               {/* Here is where the user submits their notes */}
               <NotesEditor onAdd={addNote} className="mt-5" />
             </Container>
-            {/* Render the submitted user notes displayed as cards */}
+
             <Container fluid>
+            {/* Error prompt when a problem occurs in notes submission */}
+              {isError && (<Container className="d-flex justify-content-center">
+                  <Alert variant="danger" style={{ width: "50rem" }}>
+                    There was an error in submitting notes.
+                  </Alert>
+                </Container>
+              )}
+              {/* Render the submitted user notes displayed as cards */}
               <Row className="p-2 mx-auto">
                 {notes.map((note, index) => (
                   <NotesCard
