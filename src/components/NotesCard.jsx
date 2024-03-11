@@ -18,8 +18,8 @@ import { FaTrash } from "react-icons/fa6";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 function NotesCard(props) {
-  const { title, body, author } = props;
-  const note = { title, body, author };
+  const { id, title, body, author } = props;
+  const note = { id, title, body, author };
 
   // This state helps with rendering a NotesCard component,
   // and it helps with the visibility of the card.
@@ -27,37 +27,45 @@ function NotesCard(props) {
   const [isArchivedOrTrashed, setNoteCardVisibility] = useState(false);
 
   const archiveNote = () => {
-    /**
-     * Archived notes are rendered and stored in the
-     * `UserNotesArchive.jsx` page, but they are not
-     * removed or deleted.
-     *
-     * It simply is used for safe-keeping. */
-    // Store all archived notes in this endpoint
+    // Move all archived notes in this endpoint
     fetch("http://localhost:8001/notes-archive", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
-    }).then(() => {
+    })
+    .then(() => {
       setNoteCardVisibility(true);
       console.log("note moved to archived.");
-    });
-  };
+    })
+    .then(() => {
+      fetch("http://localhost:8001/notes/" + note.id, {
+        method: "DELETE",
+      }).catch((error) => { 
+        console.log("Cannot delete original note from /notes endpoint");
+        console.error(error);
+      })
+    })
+  }; 
 
   const trashNote = () => {
-    /**
-     * Trash notes are resources where the notes can be deleted.
-     * But, upon here we just try to move them into the trash resource
-     */
-    // Store all trashed notes (can be deleted) at this endpoint
+    // Move all trashed notes (can be deleted) at this endpoint
     fetch("http://localhost:8001/notes-trash", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
-    }).then(() => {
+    })
+    .then(() => {
       setNoteCardVisibility(true);
       console.log("note moved to trash.");
-    });
+    })
+    .then(() => {
+      fetch("http://localhost:8001/notes/" + note.id, {
+        method: "DELETE",
+      }).catch((error) => { 
+        console.log("Cannot delete original note from /notes endpoint");
+        console.error(error);
+      })
+    })
   };
 
   return (
