@@ -1,4 +1,6 @@
 /**
+ * @author iamshaunjp 
+ * GitHub: https://github.com/iamshaunjp 
  * <p>
  * Base URL: The consistent part or the root of your website’s address. For example, http://www.YourDomain.com
  * Relative URL: The remaining path given after the base URL. For example, /contact_us, /seo/blog/new_postF
