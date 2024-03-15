@@ -95,3 +95,4 @@ PHILIPPIANS 4:13
 - [x] Fix styling, layouts, and positions
     - [x] Fix containers for notes card components
          - The Rows and Columns should be fixed...I think it is better to use a grid line
+- [] Add Error 404 pages
