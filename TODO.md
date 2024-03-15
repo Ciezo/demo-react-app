@@ -56,7 +56,7 @@ PHILIPPIANS 4:13
     - [x] Create a `NotesCard` component to render and display all notes..
 
 - [] User sessions and management 
-    
+    - [] Add Authentication to the entire app using `react-auth-kit`
     <b>Use `fetch()` api to handle user requests and response to integrate my backend app (Spring Boot)</b>
     
         - I decided to use this because I need to learn about parsing json objects manually. Additionally,
