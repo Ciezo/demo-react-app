@@ -16,6 +16,13 @@
  * <p>
  * Reference: https://www.contentstack.com/docs/developers/create-content-types/understand-default-url-pattern  
  * </p> 
+ * 
+ * 
+ * <p>
+ * <h5>Helpful tutorial and practice</h5>
+ * How to fetch data from an api using `fetch()`
+ * https://www.freecodecamp.org/news/how-to-fetch-data-from-an-api-using-the-fetch-api-in-javascript/
+ * </p>
  */
 
 import { useState, useEffect } from "react";
