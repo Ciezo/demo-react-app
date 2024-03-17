@@ -11,6 +11,7 @@ import DataCollection from "./pages/DataCollection";
 import UserHome from "./pages/UserHome";
 import UserNotesArchive from "./pages/UserNotesArchive";
 import UserNotesTrash from "./pages/UserNotesTrash";
+import NotFound from "./error/Error404";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/username/home" Component={UserHome} />
           <Route path="/username/archive" Component={UserNotesArchive} />
           <Route path="/username/trash" Component={UserNotesTrash} />
+          <Route path="*" Component={NotFound} />
         </Routes>
       </div>
     </Router>
