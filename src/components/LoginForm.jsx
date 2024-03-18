@@ -5,13 +5,16 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { validateUserName } from "../utils/ValidateUserName";
 import { validatePassword } from "../utils/ValidatePassword";
-import { UserCookie } from "../utils/UserCookie";
 import { useNavigate } from "react-router-dom";
+import useSignIn from 'react-auth-kit/hooks/useSignIn';
+import Alert from "react-bootstrap/Alert";
 
 function LoginForm() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isError, setError] = useState(false);
+  const signIn = useSignIn();
 
   const [validated, setValidated] = useState(false);
 
@@ -26,7 +29,7 @@ function LoginForm() {
   // Redirection to user/home
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     // stop page reload
     event.preventDefault();
     
@@ -35,26 +38,43 @@ function LoginForm() {
     if (form.checkValidity() === false && usernameErr && passwordErr) {
       event.stopPropagation();
       console.log("Errors detected!")
-    } else {  // Otherwise, for now we can log them in the browser
-      /**
-       * @TODO (Hard deadline: March 15, 2024)
-       * - Here the front-end should send a request to the 
-       * backend to check if the user exists and can be authenticated.
-       * Moreover, the client (React.js) should wait for the back-end(Spring Boot)
-       * to send out if the user is true (Authenticated and Authorized).
-       * 
-       * The user should not wait longer than 1 minute or 10 seconds.
-       */
+    } else {  // If no input errors from the form then, create a fetch() to the Spring Boot
+        
+      // Create a POST request for User Authentication
+      // http://localhost:18080/api/v1/auth/authenticate
+      // from the Spring Boot application 
+      
+      try {
+        const response = await fetch('http://localhost:18080/api/v1/auth/authenticate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password }) 
+        })
 
+        if (!response.ok) { throw new Error('Authentication failed'); }
 
-      /**
-       * @TODO (Hard deadline: March 8, 2024)
-       * - For now, implement a mock-up JSON server to 
-       * fetch all user credentials for authentication and authorization.
-       */
-      if(!usernameErr && !passwordErr) {
-        UserCookie("username", username);
-        navigate("/username/home")
+        /** Extracting the token value from the response */
+        // Key: token | Value: jwt
+        const data = await response.json(); 
+        // Set up user management using react-auth-kit
+        /** Cookie set up and everything...  */
+        if(signIn({
+          auth: {
+            token: data.token,
+            type: 'Bearer'
+          },
+          userState: {
+            user: username,
+            role: "note author"
+          }
+        })) {
+          // Upon successful signin, redirect the user to home
+          navigate("/user/home");
+        } 
+      } catch (error) { 
+        setError(true);
+        console.log("Something went wrong with fetching data from the backend. Please, check errors!")
+        console.log(error) 
       }
     }
 
@@ -62,6 +82,9 @@ function LoginForm() {
   };
   return (
     <>
+    {isError && (
+      <Alert variant={"danger"}>Invalid username or password! Please, try again!</Alert>
+    )}
       <Form 
         noValidate 
         validated={validated} 
@@ -73,7 +96,7 @@ function LoginForm() {
             required 
             type="text" 
             minLength={5}
-            maxLength={10}
+            maxLength={20}
             value={username}
             onChange={handleUsernameChange}
             placeholder="" />
@@ -91,7 +114,6 @@ function LoginForm() {
             required 
             type="password" 
             minLength={5}
-            maxLength={10}
             value={password}
             onChange={handlePasswordChange}
             placeholder="" />
