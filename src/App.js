@@ -53,9 +53,12 @@ function App() {
             <Route path="/code-of-conduct" Component={CodeOfConduct} />
             <Route path="/contribute" Component={Contribute} />
             <Route path="/data-collection" Component={DataCollection} />
+            {/* Authenticated only! */}
+            {/* ========================================================== */}
             <Route path="/username/home" Component={UserHome} />
             <Route path="/username/archive" Component={UserNotesArchive} />
             <Route path="/username/trash" Component={UserNotesTrash} />
+            {/* ========================================================== */}            
             <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
             <Route path="*" Component={NotFound} />
           </Routes>
