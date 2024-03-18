@@ -10,14 +10,15 @@ import { MdViewList } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
 import { IoLogOut } from "react-icons/io5";
 import { Outlet, Link, useNavigate } from "react-router-dom";
-import { removeUserCookie } from "../utils/RemoveUserCookie";
+import useSignOut from 'react-auth-kit/hooks/useSignOut';
 
 function UserHomeNavbar({ username }) {
+  const logout = useSignOut();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     // Destroying userInfo
-    removeUserCookie();
+    logout();
     navigate("/login");
   }
 
