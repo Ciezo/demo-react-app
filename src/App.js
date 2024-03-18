@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import createStore from "react-auth-kit/createStore";
 import AuthProvider from "react-auth-kit";
+import AuthOutlet from "@auth-kit/react-router/AuthOutlet";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
@@ -18,15 +19,15 @@ import TestSpringBootIntegration from "./test/IntegrateSpringBoot";
 import NotFound from "./error/Error404";
 
 function App() {
-  /** 
+  /**
    * <b>Store Creation</b>
    * <p>
-   * To use <u>React Auth Kit</u> in the application, 
-   * we first need to create the store that holds the data for our application. 
+   * To use <u>React Auth Kit</u> in the application,
+   * we first need to create the store that holds the data for our application.
    * </p>
-   * 
+   *
    * <p>
-   * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/ 
+   * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/
    * </p>
    */
   const store = createStore({
@@ -37,10 +38,10 @@ function App() {
   });
 
   return (
-    /** 
+    /**
      * > Integrate AuthProvider before Routes. The best place is app.js.
-     * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/  
-    */
+     * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/
+     */
     <AuthProvider store={store}>
       <Router>
         <div className="content">
@@ -55,10 +56,12 @@ function App() {
             <Route path="/data-collection" Component={DataCollection} />
             {/* Authenticated only! */}
             {/* ========================================================== */}
-            <Route path="/username/home" Component={UserHome} />
-            <Route path="/username/archive" Component={UserNotesArchive} />
-            <Route path="/username/trash" Component={UserNotesTrash} />
-            {/* ========================================================== */}            
+            <Route element={<AuthOutlet fallbackPath="/login" />}>
+              <Route path="/user/home" Component={UserHome} />
+              <Route path="/user/archive" Component={UserNotesArchive} />
+              <Route path="/user/trash" Component={UserNotesTrash} />
+            </Route>
+            {/* ========================================================== */}
             <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
             <Route path="*" Component={NotFound} />
           </Routes>
