@@ -17,6 +17,17 @@ import UserNotesTrash from "./pages/UserNotesTrash";
 import NotFound from "./error/Error404";
 
 function App() {
+  /** 
+   * <b>Store Creation</b>
+   * <p>
+   * To use <u>React Auth Kit</u> in the application, 
+   * we first need to create the store that holds the data for our application. 
+   * </p>
+   * 
+   * <p>
+   * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/ 
+   * </p>
+   */
   const store = createStore({
     authName: "_auth",
     authType: "cookie",
