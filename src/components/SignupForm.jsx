@@ -82,7 +82,7 @@ function SignupForm() {
             required 
             type="text" 
             minLength={5}
-            maxLength={10}
+            maxLength={255}
             value={firstname}
             onChange={handleFirstNameChange}
             placeholder="" />
@@ -100,7 +100,7 @@ function SignupForm() {
             required 
             type="text" 
             minLength={5}
-            maxLength={10}
+            maxLength={255}
             value={lastname}
             onChange={handleLastNameChange}
             placeholder="" />
@@ -131,7 +131,7 @@ function SignupForm() {
             <Form.Control required 
             type="text"
             minLength={5}
-            maxLength={10}
+            maxLength={20}
             value={username}
             onChange={handleUsernameChange}
             placeholder="name@example.com" />
