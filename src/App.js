@@ -14,6 +14,7 @@ import DataCollection from "./pages/DataCollection";
 import UserHome from "./pages/UserHome";
 import UserNotesArchive from "./pages/UserNotesArchive";
 import UserNotesTrash from "./pages/UserNotesTrash";
+import TestSpringBootIntegration from "./test/IntegrateSpringBoot";
 import NotFound from "./error/Error404";
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
             <Route path="/username/home" Component={UserHome} />
             <Route path="/username/archive" Component={UserNotesArchive} />
             <Route path="/username/trash" Component={UserNotesTrash} />
+            <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
             <Route path="*" Component={NotFound} />
           </Routes>
         </div>
