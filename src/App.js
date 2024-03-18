@@ -36,6 +36,10 @@ function App() {
   });
 
   return (
+    /** 
+     * > Integrate AuthProvider before Routes. The best place is app.js.
+     * Reference: https://authkit.arkadip.dev/getting_started/integration/react-app/  
+    */
     <AuthProvider store={store}>
       <Router>
         <div className="content">
