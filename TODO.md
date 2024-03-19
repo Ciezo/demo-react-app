@@ -103,3 +103,12 @@ PHILIPPIANS 4:13
     - [x] Fix containers for notes card components
          - The Rows and Columns should be fixed...I think it is better to use a grid line
 - [x] Add Error 404 pages
+
+- [] Spring Boot API calls  
+    - `api/useFetch.js` is used for this to make it easier...
+    - [] Fetch `Notes` based on `username`
+    - [] Fetch `TrashNotes` based on `username`
+    - [] Fetch `ArchiveNotes` based on `username`
+    - [] POST Notes using fetch()
+    - [] GET Notes using fetch()
+    - [] DELETE Notes using fetch()
