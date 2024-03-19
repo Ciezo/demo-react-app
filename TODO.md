@@ -63,8 +63,9 @@ PHILIPPIANS 4:13
         `fetch()` api can work with modern browsers and does not need more dependencies than `axios()` api.
 
     - [x] Implement Logout function
-    - [] <b>Register</b> users using the Spring Boot backend 
+    - [x] <b>Register</b> users using the Spring Boot backend 
         - At (http://localhost:18080/api/v1/auth/register) 
+        - [] Test `User Registration` from client-side (React.js) to server-side (Spring Boot)
 
 - [x] Design Trash page
 - [x] Design Archive page
