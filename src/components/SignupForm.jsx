@@ -63,7 +63,6 @@ function SignupForm() {
     } else {  // Otherwise, register the user thru fetch() to the Spring Boot Application
       const user = {firstname, lastname, birthday, username, email, password, role};
       try {
-        console.log(user);
         // Create a POST request for User Registration
         // http://localhost:18080/api/v1/auth/register
         // from the Spring Boot application 
@@ -74,8 +73,11 @@ function SignupForm() {
           body: JSON.stringify(user) 
         })
 
-        if (!response.ok) { throw new Error('User Registration Failed!'); }
-        else {
+        if (!response.ok) { 
+          console.log("Response is not okay!");
+          setRegisterError(true);
+          throw new Error('User Registration Failed!'); 
+        } else {
           setNotified(true);
           navigate("/login");
         }
