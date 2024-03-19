@@ -33,7 +33,7 @@ function UserHomeNavbar({ username }) {
               <Form.Control size="md" type="text" placeholder="Search..." />
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to="/username/my-account"><RxAvatar /> My Account</Nav.Link>
+              <Nav.Link as={Link} to="/user/my-account"><RxAvatar /> My Account</Nav.Link>
             </Nav> 
             <NavDropdown title="More" id="collapsible-nav-dropdown">
               <NavDropdown.Item><b>{`Hello, ${username}!`}</b></NavDropdown.Item>

@@ -15,17 +15,17 @@ function Sidebar() {
         <Navbar.Collapse>
           <Nav className="me-auto col-md-2 px-2 my-3 d-none d-md-block sidebar">
             <Nav.Item>
-              <Nav.Link href="/username/home">
+              <Nav.Link href="/user/home">
                 <BsChatLeftTextFill className="mr-2" /> Notes
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/username/archive">
+              <Nav.Link href="/user/notes/archive">
                 <BsArchiveFill className="mr-2" /> Archive
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
-              <Nav.Link href="/username/trash">
+              <Nav.Link href="/user/notes/trash">
                 <BsFillTrashFill className="mr-2" /> Trash
               </Nav.Link>
             </Nav.Item>

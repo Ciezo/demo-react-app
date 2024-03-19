@@ -58,8 +58,9 @@ function App() {
             {/* ========================================================== */}
             <Route element={<AuthOutlet fallbackPath="/login" />}>
               <Route path="/user/home" Component={UserHome} />
-              <Route path="/user/archive" Component={UserNotesArchive} />
-              <Route path="/user/trash" Component={UserNotesTrash} />
+              <Route path="/user/notes/archive" Component={UserNotesArchive} />
+              <Route path="/user/notes/trash" Component={UserNotesTrash} />
+              <Route path="/user/my-account" />
             </Route>
             {/* ========================================================== */}
             <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
