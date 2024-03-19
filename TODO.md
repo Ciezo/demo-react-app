@@ -65,7 +65,13 @@ PHILIPPIANS 4:13
     - [x] Implement Logout function
     - [x] <b>Register</b> users using the Spring Boot backend 
         - At (http://localhost:18080/api/v1/auth/register) 
-        - [] Test `User Registration` from client-side (React.js) to server-side (Spring Boot)
+        - [x] Test `User Registration` from client-side (React.js) to server-side (Spring Boot)
+        - [x] Test User Authentication from client-side (React.js) to server-side (Spring Boot)
+        - [x] Tested redirect to home page after successful login
+            - The application was successful to allow registered users to login with existing credentials from the database
+        - [x] Tested invalid credentials on LoginForm
+            - The application was successful to <b>deny</b> unregistered users
+            - The application was able to prompt users when they have an invalid attempt at logged-in
 
 - [x] Design Trash page
 - [x] Design Archive page
