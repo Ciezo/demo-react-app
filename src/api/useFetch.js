@@ -48,8 +48,8 @@ const useFetch = (relativeURL, token) => {
         const response = await fetch(baseURL + relativeURL, {
           headers: {Authorization: `Bearer ${token}`},
           signal: abortCont.signal
-        })
-
+        }) 
+        
         // Check the response 
         /** This condition will only be true if something went wrong with fetch-response */
         if(!response.ok) {
@@ -70,6 +70,7 @@ const useFetch = (relativeURL, token) => {
           // auto catches network / connection error
           setIsPending(false);
           setError(error.message);
+          console.log(error);
         }
       }
     }; fetchData();
