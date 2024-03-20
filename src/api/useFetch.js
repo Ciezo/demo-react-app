@@ -35,7 +35,7 @@ import { useState, useEffect } from "react";
  * @returns converted `Response` object in JSON format.
  */
 const useFetch = (relativeURL, token) => {
-  const baseURL = "http://localhost:18080/api/v1";
+  const baseURL = "http://localhost:18080/api/inkdown/v1";
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);

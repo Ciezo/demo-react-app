@@ -6,26 +6,32 @@ import NotesEditor from "../components/NotesEditor";
 import { useState } from "react";
 import NotesCard from "../components/NotesCard";
 import Alert from "react-bootstrap/Alert";
+import { extract_auth_state } from "../utils/ExtractAuthState";
+import { extract_auth } from "../utils/ExtractAuth";
+import useFetch from "../api/useFetch";
 
 function UserHome() {
-  const [notes, setNote] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [isError, setError] = useState(false);
+  let author = extract_auth_state("_auth_state");
+  let token = extract_auth();
+  const { data, isPending, error } = useFetch(`/notes/author?author=${author.user}`, token);
 
   /** Fetch all stored notes from the database */
   useEffect(() => {
-    fetch("http://localhost:8001/notes")
-      .then((res) => res.json())
-      .then((data) => {
-        setNote(data);
-      })
-      .catch((error) => {
-        setError(true);
-        console.error(error);
-      });
-  }, []);
+    try {
+      if(data) {
+        setNotes(data);
+      } 
+    } catch (error) {
+      setError(error);
+      console.log("An error occurred!"); 
+      throw new Error(error);
+    }
+  }, [data]);
 
   const addNote = (newNote) => {
-    setNote((prevValue) => {
+    setNotes((prevValue) => {
       return [...prevValue, newNote];
     });
   };
@@ -56,16 +62,18 @@ function UserHome() {
                 </Container>
               )}
               {/* Render the submitted user notes displayed as cards */}
+              {isPending && <div className="lead">Loading...</div>}
+              {isError && <div className="lead">
+                An an error occurred!
+                <div className="lead"> { error } </div> 
+                </div>}
               <Row className="p-2 mx-auto">
-                {notes.map((note, index) => (
-                  <NotesCard
-                    key={index}
-                    id={note.id}
-                    title={note.title}
-                    body={note.body}
-                    author={note.author}
-                  />
-                ))}
+                {<NotesCard
+                  id={notes.id}
+                  title={notes.title}
+                  body={notes.body}
+                  author={notes.author}
+                />}
               </Row>
             </Container>
           </Col>

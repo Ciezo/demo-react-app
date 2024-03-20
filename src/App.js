@@ -16,6 +16,7 @@ import UserHome from "./pages/UserHome";
 import UserNotesArchive from "./pages/UserNotesArchive";
 import UserNotesTrash from "./pages/UserNotesTrash";
 import TestSpringBootIntegration from "./test/IntegrateSpringBoot";
+import TestApiCallsUsingFetchToSpringBoot from "./test/ApiCallsUseFetch";
 import NotFound from "./error/Error404";
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
               <Route path="/user/notes/archive" Component={UserNotesArchive} />
               <Route path="/user/notes/trash" Component={UserNotesTrash} />
               <Route path="/user/my-account" />
+              <Route path="/test/backend/springboot/calls" Component={TestApiCallsUsingFetchToSpringBoot} />
             </Route>
             {/* ========================================================== */}
             <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
