@@ -105,6 +105,8 @@ PHILIPPIANS 4:13
 - [x] Add Error 404 pages
 - [x] Extract the user cookie set by react-auth-kit
 - [] Spring Boot API calls  
+    - [] Get the `_auth` token using `extract_auth_state` 
+    - [] Set authorization header for each API call
     - `api/useFetch.js` is used for this to make it easier...
     - [] Fetch `Notes` based on `username`
     - [] Fetch `TrashNotes` based on `username`
