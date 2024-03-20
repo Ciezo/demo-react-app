@@ -51,12 +51,13 @@ const useFetch = (relativeURL, token) => {
         })
 
         // Check the response 
+        /** This condition will only be true if something went wrong with fetch-response */
         if(!response.ok) {
           setError('Error code: ' + response.statusText);
           console.log("Something went wrong with fetching data for " + relativeURL)
           throw Error("could not fetch the data for that resource");
         }
-
+        /** Otherwise, if the response object is okay..then we can parse it in JSON */
         const parsedJSONResponse  = await response.json();
         setIsPending(false);
         setData(parsedJSONResponse);
