@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { extract_auth_state } from "../utils/ExtractAuthState";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -12,9 +13,16 @@ import { IoLogOut } from "react-icons/io5";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import useSignOut from 'react-auth-kit/hooks/useSignOut';
 
-function UserHomeNavbar({ username }) {
+function UserHomeNavbar() {
+  const [username, setUsername] = useState("");
   const logout = useSignOut();
   const navigate = useNavigate();
+
+  /** Setting the username based on username cookie */
+  useEffect(() => {
+    const username = extract_auth_state("_auth_state");
+    setUsername(username.user);
+  }, []);
 
   const handleLogout = () => {
     // Destroying userInfo

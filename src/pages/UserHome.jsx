@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { getUserCookie } from "../utils/GetUserCookie";
 import UserHomeNavbar from "../components/UserHomeNavbar";
 import Sidebar from "../components/Sidebar";
 import NotesEditor from "../components/NotesEditor";
@@ -9,15 +8,8 @@ import NotesCard from "../components/NotesCard";
 import Alert from "react-bootstrap/Alert";
 
 function UserHome() {
-  const [username, setUsername] = useState("");
   const [notes, setNote] = useState([]);
   const [isError, setError] = useState(false);
-
-  /** Setting the username based on username cookie */
-  useEffect(() => {
-    const usernameCookie = getUserCookie("username");
-    setUsername(usernameCookie);
-  }, []);
 
   /** Fetch all stored notes from the database */
   useEffect(() => {
@@ -40,7 +32,7 @@ function UserHome() {
 
   return (
     <>
-      <UserHomeNavbar username={username} />
+      <UserHomeNavbar />
 
       {/* Main user content goes here */}
       <Container fluid className="px-auto my-5">

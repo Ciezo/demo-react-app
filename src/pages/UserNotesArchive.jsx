@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import UserHomeNavbar from "../components/UserHomeNavbar";
 import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
-import { getUserCookie } from "../utils/GetUserCookie";
+import { extract_auth_state } from "../utils/ExtractAuthState";
 import NotesCardOnArchive from "../components/NotesCardOnArchive";
 
 function UserNotesArchive() {
@@ -11,8 +11,8 @@ function UserNotesArchive() {
   const [isError, setError] = useState(false);
 
   useEffect(() => {
-    const usernameCookie = getUserCookie("username");
-    setUsername(usernameCookie);
+    const username = extract_auth_state("_auth_state");
+    setUsername(username.user);
   }, []);
 
   // Check the :8001/notes-archive endpoint if there are any archived notes
@@ -30,7 +30,7 @@ function UserNotesArchive() {
 
   return (
     <>
-      <UserHomeNavbar username={username} />
+      <UserHomeNavbar />
 
       {/* Main user content goes here */}
       <Container fluid="lg" className="px-auto my-5">
