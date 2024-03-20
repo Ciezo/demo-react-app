@@ -30,10 +30,11 @@ import { useState, useEffect } from "react";
 /**
  * This is a configured `fetch()` where it is set to send request 
  * to catch a resource based on the relativeURL, and return a reponse in JSON format. 
- * @param {string} relativeURL, the identifying resource to fetch. 
+ * @param {string} relativeURL the identifying resource to fetch.
+ * @param {string} token the Bearer token for Authorization header  
  * @returns converted `Response` object in JSON format.
  */
-const useFetch = (relativeURL) => {
+const useFetch = (relativeURL, token) => {
   const baseURL = "http://localhost:18080/api/v1";
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(true);
@@ -42,35 +43,39 @@ const useFetch = (relativeURL) => {
   useEffect(() => {
     const abortCont = new AbortController();
 
-    setTimeout(() => {
-      fetch(baseURL + relativeURL, { signal: abortCont.signal })
-        .then((res) => {
-          if (!res.ok) {
-            // error coming back from server
-            setError(res.Error);
-            throw Error("could not fetch the data for that resource");
-          }
-          return res.json();
+    const fetchData = async () => {
+      try {
+        const response = await fetch(baseURL + relativeURL, {
+          headers: {Authorization: `Bearer ${token}`},
+          signal: abortCont.signal
         })
-        .then((data) => {
+
+        // Check the response 
+        if(!response.ok) {
+          setError('Error code: ' + response.statusText);
+          console.log("Something went wrong with fetching data for " + relativeURL)
+          throw Error("could not fetch the data for that resource");
+        }
+
+        const parsedJSONResponse  = await response.json();
+        setIsPending(false);
+        setData(parsedJSONResponse);
+        setError(null);
+
+      } catch (error) {
+        if (error.name === "AbortError") {
+          console.log("fetch aborted");
+        } else {
+          // auto catches network / connection error
           setIsPending(false);
-          setData(data);
-          setError(null);
-        })
-        .catch((err) => {
-          if (err.name === "AbortError") {
-            console.log("fetch aborted");
-          } else {
-            // auto catches network / connection error
-            setIsPending(false);
-            setError(err.message);
-          }
-        });
-    }, 1000);
+          setError(error.message);
+        }
+      }
+    }; fetchData();
 
     // abort the fetch
     return () => abortCont.abort();
-  }, [relativeURL]);
+  }, [relativeURL, token]);
 
   return { data, isPending, error };
 };
