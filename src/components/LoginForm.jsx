@@ -65,7 +65,7 @@ function LoginForm() {
           },
           userState: {
             user: username,
-            role: "note_author"
+            role: "USER"
           }
         })) {
           // Upon successful signin, redirect the user to home
