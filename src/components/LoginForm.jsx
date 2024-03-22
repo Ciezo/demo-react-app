@@ -58,6 +58,9 @@ function LoginForm() {
         const data = await response.json(); 
         // Set up user management using react-auth-kit
         /** Cookie set up and everything...  */
+        /**
+         * @todo assign here the user_id_primary_key
+         */
         if(signIn({
           auth: {
             token: data.token,
@@ -65,6 +68,7 @@ function LoginForm() {
           },
           userState: {
             user: username,
+            // user_id_pk: getUserIdPrimaryKey(username).Response
             role: "USER"
           }
         })) {
