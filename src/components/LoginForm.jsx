@@ -7,6 +7,7 @@ import { validateUserName } from "../utils/ValidateUserName";
 import { validatePassword } from "../utils/ValidatePassword";
 import { useNavigate } from "react-router-dom";
 import useSignIn from 'react-auth-kit/hooks/useSignIn';
+import getUserIdPrimaryKey from "../utils/GetUserIdPrimaryKey";
 import Alert from "react-bootstrap/Alert";
 
 function LoginForm() {
@@ -14,6 +15,8 @@ function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
+  /** @todo Test this on Monday! You can do this, Cloyd! :> */
+  const [userId, setUserId] = useState("");
   const signIn = useSignIn();
 
   const [validated, setValidated] = useState(false);
@@ -43,14 +46,17 @@ function LoginForm() {
       // Create a POST request for User Authentication
       // http://localhost:18080/api/v1/auth/authenticate
       // from the Spring Boot application 
-      
+
       try {
         const response = await fetch('http://localhost:18080/api/v1/auth/authenticate', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ username, password }) 
-        })
-
+        }) 
+        /** Get the primary key to assign */
+        const userIdPk = await getUserIdPrimaryKey(username);
+        setUserId(userIdPk);
+        
         if (!response.ok) { throw new Error('Authentication failed'); }
 
         /** Extracting the token value from the response */
@@ -58,9 +64,6 @@ function LoginForm() {
         const data = await response.json(); 
         // Set up user management using react-auth-kit
         /** Cookie set up and everything...  */
-        /**
-         * @todo assign here the user_id_primary_key
-         */
         if(signIn({
           auth: {
             token: data.token,
@@ -68,7 +71,7 @@ function LoginForm() {
           },
           userState: {
             user: username,
-            // user_id_pk: getUserIdPrimaryKey(username).Response
+            user_id_pk: userId,
             role: "USER"
           }
         })) {
