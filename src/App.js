@@ -64,10 +64,10 @@ function App() {
               <Route path="/user/notes/trash" Component={UserNotesTrash} />
               <Route path="/user/my-account" />
               <Route path="/test/backend/springboot/calls" Component={TestApiCallsUsingFetchToSpringBoot} />
-              <Route path="/test/backend/springboot/calls/user/id" Component={TestExtractUserIdPrimaryKey} />
             </Route>
             {/* ========================================================== */}
             <Route path="/test/backend/springboot/integration" Component={TestSpringBootIntegration} />
+            <Route path="/test/backend/springboot/calls/user/id" Component={TestExtractUserIdPrimaryKey} />
             <Route path="*" Component={NotFound} />
           </Routes>
         </div>

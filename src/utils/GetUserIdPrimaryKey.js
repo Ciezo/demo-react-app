@@ -1,4 +1,3 @@
-import { extract_auth } from "./ExtractAuth";
 /**
  * A simple async-function to extract the `user_id` primary key from the `User` entity table
  * <b>No problem using with non-functional level components</b>
@@ -7,11 +6,9 @@ import { extract_auth } from "./ExtractAuth";
  */
 async function getUserIdPrimaryKey(username) {
   const baseURL = "http://localhost:18080/api/inkdown/v1";
-  const token = extract_auth(); // Assuming you have a function called extract_auth()
-
+  
   try {
     const response = await fetch(baseURL + `/user/${username}`, {
-      headers: { Authorization: `Bearer ${token}` },
     });
 
     if (response.ok) {
