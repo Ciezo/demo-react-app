@@ -15,8 +15,6 @@ function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isError, setError] = useState(false);
-  /** @todo Test this on Monday! You can do this, Cloyd! :> */
-  const [userId, setUserId] = useState("");
   const signIn = useSignIn();
 
   const [validated, setValidated] = useState(false);
@@ -55,7 +53,6 @@ function LoginForm() {
         }) 
         /** Get the primary key to assign */
         const userIdPk = await getUserIdPrimaryKey(username);
-        setUserId(userIdPk);
         
         if (!response.ok) { throw new Error('Authentication failed'); }
 
@@ -71,7 +68,7 @@ function LoginForm() {
           },
           userState: {
             user: username,
-            user_id_pk: userId,
+            user_id_pk: userIdPk,
             role: "USER"
           }
         })) {
