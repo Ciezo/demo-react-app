@@ -13,16 +13,52 @@ import useFetch from "../api/useFetch";
 function UserHome() {
   const [notes, setNotes] = useState([]);
   const [isError, setError] = useState(false);
-  let author = extract_auth_state("_auth_state");
-  let token = extract_auth();
-  const { data, isPending, error } = useFetch(`/notes/author?author=${author.user}`, token);
-
+  const user = extract_auth_state("_auth_state");
+  const token = extract_auth();
+  const { data, isPending, error } = useFetch(`/notes/user/${user.user_id_pk}`, token);
+  
+  /** Prepare and structure the notes data only */
+  /** About cleaning up the data...
+   * This is done since the response is from 
+   * `useFetch()` using the endpoint:
+   *  http://localhost:18080/api/inkdown/v1/notes/user/<user.user_id_pk> 
+   * The response from the Spring Boot application is as follows:
+   * [
+   *  {
+   *    "id": "<note_id>",
+   *    "title": "<note_title>",
+   *    "body": "<note_body>"
+   *     "user": { // UserDetails. !!! We don't need this. !!! }
+   *  }
+   * ]
+   * 
+   * Hence, a notesData is represented by the following structure in this object.
+   * const noteObject = {
+   *    title, 
+   *    author,
+   *    body
+   * };
+   */
+  
   /** Fetch all stored notes from the database */
   useEffect(() => {
     try {
       if(data) {
-        setNotes(data);
-      } 
+        const notesData = [];
+        for (const notes of data) {
+          const title = notes.title;
+          const author = notes.author;
+          const body = notes.body;
+          const noteObject = {
+            title,
+            author,
+            body
+          };
+          notesData.push(noteObject);
+          // Set the notes[] state. Remember this is an array so it must be mapped.
+          setNotes(notesData);
+        }
+      }
     } catch (error) {
       setError(error);
       console.log("An error occurred!"); 
@@ -68,12 +104,15 @@ function UserHome() {
                 <div className="lead"> { error } </div> 
                 </div>}
               <Row className="p-2 mx-auto">
-                {<NotesCard
-                  id={notes.id}
-                  title={notes.title}
-                  body={notes.body}
-                  author={notes.author}
-                />}
+                {notes.map((note, index) => (
+                  <NotesCard
+                    key={index}
+                    id={index}
+                    title={note.title}
+                    body={note.body}
+                    author={note.author} 
+                  />  
+                ))}
               </Row>
             </Container>
           </Col>
