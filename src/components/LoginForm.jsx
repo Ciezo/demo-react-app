@@ -68,8 +68,7 @@ function LoginForm() {
           },
           userState: {
             user: username,
-            user_id_pk: userIdPk,
-            role: "USER"
+            user_id_pk: userIdPk
           }
         })) {
           // Upon successful signin, redirect the user to home
