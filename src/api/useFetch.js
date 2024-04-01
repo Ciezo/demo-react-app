@@ -43,37 +43,39 @@ const useFetch = (relativeURL, token) => {
   useEffect(() => {
     const abortCont = new AbortController();
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(baseURL + relativeURL, {
-          headers: {Authorization: `Bearer ${token}`},
-          signal: abortCont.signal
-        }) 
-        
-        // Check the response 
-        /** This condition will only be true if something went wrong with fetch-response */
-        if(!response.ok) {
-          setError('Error code: ' + response.statusText);
-          console.log("Something went wrong with fetching data for " + relativeURL)
-          throw Error("could not fetch the data for that resource");
-        }
-        /** Otherwise, if the response object is okay..then we can parse it in JSON */
-        const parsedJSONResponse  = await response.json();
-        setIsPending(false);
-        setData(parsedJSONResponse);
-        setError(null);
-
-      } catch (error) {
-        if (error.name === "AbortError") {
-          console.log("fetch aborted");
-        } else {
-          // auto catches network / connection error
+    setTimeout(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch(baseURL + relativeURL, {
+            headers: {Authorization: `Bearer ${token}`},
+            signal: abortCont.signal
+          }) 
+          
+          // Check the response 
+          /** This condition will only be true if something went wrong with fetch-response */
+          if(!response.ok) {
+            setError('Error code: ' + response.statusText);
+            console.log("Something went wrong with fetching data for " + relativeURL)
+            throw Error("could not fetch the data for that resource");
+          }
+          /** Otherwise, if the response object is okay..then we can parse it in JSON */
+          const parsedJSONResponse  = await response.json();
           setIsPending(false);
-          setError(error.message);
-          console.log(error);
+          setData(parsedJSONResponse);
+          setError(null);
+  
+        } catch (error) {
+          if (error.name === "AbortError") {
+            console.log("fetch aborted");
+          } else {
+            // auto catches network / connection error
+            setIsPending(false);
+            setError(error.message);
+            console.log(error);
+          }
         }
-      }
-    }; fetchData();
+      }; fetchData();
+    }, 1000)
 
     // abort the fetch
     return () => abortCont.abort();
