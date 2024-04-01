@@ -16,13 +16,10 @@ import { Col } from "react-bootstrap";
 import { FaBoxArchive } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa6";
 import { Button, ButtonGroup } from "react-bootstrap";
-import { extract_auth } from "../utils/ExtractAuth";
 
 function NotesCard(props) {
   const { id, title, body, author } = props;
   const note = { id, title, body, author };
-  const baseURL = "http://localhost:18080/api/inkdown/v1"; 
-  const token = extract_auth();
 
   // This state helps with rendering a NotesCard component,
   // and it helps with the visibility of the card.
@@ -31,12 +28,9 @@ function NotesCard(props) {
 
   const archiveNote = () => {
     // Move all archived notes in this endpoint
-    fetch(baseURL + "/notes-archive", {
+    fetch("http://localhost:8001/notes-archive", {
       method: "POST",
-      headers: { 
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json" 
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
     })
     .then(() => {
@@ -44,12 +38,8 @@ function NotesCard(props) {
       console.log("note moved to archived.");
     })
     .then(() => {
-      fetch(baseURL + "/notes/delete-note/id/" + note.id, {
+      fetch("http://localhost:8001/notes/" + note.id, {
         method: "DELETE",
-        headers: { 
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json" 
-        },
       }).catch((error) => { 
         console.log("Cannot delete original note from /notes endpoint");
         console.error(error);
@@ -59,12 +49,9 @@ function NotesCard(props) {
 
   const trashNote = () => {
     // Move all trashed notes (can be deleted) at this endpoint
-    fetch(baseURL + "/notes-trash", {
+    fetch("http://localhost:8001/notes-trash", {
       method: "POST",
-      headers: { 
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json" 
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(note),
     })
     .then(() => {
@@ -72,12 +59,8 @@ function NotesCard(props) {
       console.log("note moved to trash.");
     })
     .then(() => {
-      fetch(baseURL + "/notes/delete-note/id/" + note.id, {
+      fetch("http://localhost:8001/notes/" + note.id, {
         method: "DELETE",
-        headers: { 
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json" 
-        },
       }).catch((error) => { 
         console.log("Cannot delete original note from /notes endpoint");
         console.error(error);
