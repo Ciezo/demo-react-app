@@ -107,7 +107,7 @@ function UserHome() {
                 {notes.map((note, index) => (
                   <NotesCard
                     key={index}
-                    id={index}
+                    id={note.id}
                     title={note.title}
                     body={note.body}
                     author={note.author} 
