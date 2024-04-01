@@ -4,29 +4,61 @@ import { Container, Row, Col } from "react-bootstrap";
 import Sidebar from "../components/Sidebar";
 import { extract_auth_state } from "../utils/ExtractAuthState";
 import NotesCardOnTrash from "../components/NotesCardOnTrash";
+import { extract_auth } from "../utils/ExtractAuth";
+import useFetch from "../api/useFetch";
 
 function UserNotesTrash() {
-  const [username, setUsername] = useState("");
   const [trashNotes, setTrashNotes] = useState([]);
   const [isError, setError] = useState(false);
+  const user = extract_auth_state("_auth_state");
+  const token = extract_auth();
+  const { data, isPending, error } = useFetch(`/notes-trash`, token);
 
   useEffect(() => {
-    const username = extract_auth_state("_auth_state");
-    setUsername(username.user);
-  }, []);
+    try {
+      if(data) {
+        /** All trash notes by its own username 
+         * are assigned here in this emtpy array
+         * 
+         * `/notes-trash` endpoint returns all trash notes from all users
+         * 
+         * Therefore, filtering the required data is necessary, and we need 
+         * the username for that.
+        */
+        const trashNotesByUsername = [];
+        
+        for(const notesTrash of data) {
+          /** The supposed author of an archive note */
+          const _user = notesTrash.author;
+          /** Current user logged-in */
+          const userInSession = user.user;
 
-  // Check the :8001/notes-trash endpoint if there are any archived notes
-  useEffect(() => {
-    fetch("http://localhost:8001/notes-trash")
-      .then((res) => res.json())
-      .then((data) => {
-        setTrashNotes(data);
-      })
-      .catch((error) => {
-        setError(true);
-        console.error("Error fetching data: " + error);
-      });
-  }, []);
+          const id = notesTrash.id;
+          const title = notesTrash.title;
+          const author = notesTrash.author;
+          const body = notesTrash.body;
+
+          const notesOnTrashObject = {
+            id, 
+            title,
+            author,
+            body
+          };
+
+          /** Matching and filtering */
+          if(_user === userInSession) {
+            trashNotesByUsername.push(notesOnTrashObject);
+            setTrashNotes(trashNotesByUsername);
+          }
+        }
+      }
+
+    } catch (error) {
+      setError(error);
+      console.log("An error occurred");
+      throw new Error(error);
+    }
+  }, [data, user.user]);
 
   return (
     <>
@@ -40,8 +72,18 @@ function UserNotesTrash() {
           </Col>
 
           <Col lg={10} className="mx-auto my-2">
-            <p className="lead">Trash notes by {username}</p>
-            {isError && <p className="lead">No trash notes found...</p>}
+            <p className="lead">Trash notes by {user.user}</p>
+
+            {/* Error prompt */}
+            {isError && <div className="lead">
+              An error occurred! 
+              <div className="lead"> { error }</div>
+            </div>}
+            
+            {/* Loading Prompt */}
+            {isPending && <div className="lead">Loading...</div>}
+
+            {/* Render the trash notes here */}
             <Container fluid>
               {!isError && (
                 <Row className="p-2 mx-auto">
