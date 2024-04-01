@@ -46,10 +46,12 @@ function UserHome() {
       if(data) {
         const notesData = [];
         for (const notes of data) {
+          const id = notes.id;
           const title = notes.title;
           const author = notes.author;
           const body = notes.body;
           const noteObject = {
+            id,
             title,
             author,
             body
