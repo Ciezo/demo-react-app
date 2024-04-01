@@ -6,11 +6,7 @@ import Button from "react-bootstrap/Button";
 import { BiSolidAddToQueue } from "react-icons/bi";
 import { extract_auth_state } from "../utils/ExtractAuthState";
 import { extract_auth } from "../utils/ExtractAuth";
-/**
- *
- * @TODO March 6, 2024
- * - When the Spring Boot backend is finished add a POST method to onSubmit
- */
+
 function NotesEditor(props) {
   /** These are cookie values assigned upon login which are the following:
    * On Console Browser Application Tab:
