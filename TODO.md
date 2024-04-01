@@ -55,7 +55,7 @@ PHILIPPIANS 4:13
     - [x] Add `state management` and functionality to the `NotesEditor`
     - [x] Create a `NotesCard` component to render and display all notes..
 
-- [] User sessions and management 
+- [x] User sessions and management 
     - [x] Add Authentication to the entire app using `react-auth-kit`
     <b>Use `fetch()` api to handle user requests and response to integrate my backend app (Spring Boot)</b>
     
@@ -104,13 +104,13 @@ PHILIPPIANS 4:13
          - The Rows and Columns should be fixed...I think it is better to use a grid line
 - [x] Add Error 404 pages
 - [x] Extract the user cookie set by react-auth-kit
-- [] Spring Boot API calls  
+- [x] Spring Boot API calls  
     - [x] Get the `_auth` token using `extract_auth_state` 
     - [x] Set authorization header for each API call
     - `api/useFetch.js` is used for this to make it easier...
     - [x] Fetch `Notes` based on `userIdPk`
-    - [] Fetch `TrashNotes` based on `userIdPk`
-    - [] Fetch `ArchiveNotes` based on `userIdPk`
+    - [x] Fetch `TrashNotes` based on `userIdPk`
+    - [x] Fetch `ArchiveNotes` based on `userIdPk`
     - [x] POST Notes async/await with fetch()
-    - [] GET Notes using fetch()
-    - [] DELETE Notes using fetch()
+    - [x] GET Notes async/await with fetch()
+    - [x] DELETE Notes async/await using fetch()
