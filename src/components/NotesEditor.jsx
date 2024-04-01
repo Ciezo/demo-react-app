@@ -4,26 +4,61 @@ import Form from "react-bootstrap/Form";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { BiSolidAddToQueue } from "react-icons/bi";
-import { getUserCookie } from "../utils/GetUserCookie";
-
+import { extract_auth_state } from "../utils/ExtractAuthState";
+import { extract_auth } from "../utils/ExtractAuth";
 /**
  *
  * @TODO March 6, 2024
  * - When the Spring Boot backend is finished add a POST method to onSubmit
  */
 function NotesEditor(props) {
-  // This state is used to expand and contract the form
-  const [isExpanded, setExpand] = useState(false);
-  /**
-   * The attributes title and body are from the Form,
-   * while the author is an assigned value based on the username cookie
+  /** These are cookie values assigned upon login which are the following:
+   * On Console Browser Application Tab:
+   * @example {"user":"cloydvan","user_id_pk":1}
    */
-  const setAuthor = () => {
-    const author = getUserCookie("username");
-    return author;
-  }
-  const [note, setNote] = useState({ title: "", body: "", author: setAuthor() });
+  const _user = extract_auth_state("_auth_state");
+  /** The assigned (Cookie) JWT token when logged in. 
+   * This is assigned by Spring Boot Application
+   * 
+   * @example {_auth: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjbG95ZHZhbiIsImlhdCI6MTcxMTk1MDMxNiwiZXhwIjoxNzExOTU0NjM2fQ.f1xu5C6ob5R8tRMdEdXoatZPItalimIBp-5-yGfNkpc}
+  */
+  const token = extract_auth();
+  /** Base URL for Spring Boot application at port `18080`. <b>Requires Authentication</b> */
+  const baseURL = "http://localhost:18080/api/inkdown/v1";
 
+
+  // A POST request to the Spring Boot application should be 
+  // structured like this:
+  // {
+  //  "note": {
+  //       "title": "Test here",
+  //       "author": "cloydvan",
+  //       "body": "The quick brown fox jumps over the lazy dog"
+  //   },
+  //   "user": {
+  //       "id": <user_id_pk>,
+  //       "role": "USER"
+  //   }
+  // } 
+
+  // Simplify the notes data object
+  const [note, setNote] = useState({
+    title: "",
+    author: _user.user,
+    body: ""
+  }); 
+  // Simplify the user data object
+  const user = {
+    id: _user.user_id_pk,
+    role: "USER"
+  };
+  // Simply, combine both!
+  const postObjectOnSubmit = {
+    note, 
+    user
+  } 
+
+  const [isExpanded, setExpand] = useState(false);
   const expand = () => {
     setExpand(true);
   };
@@ -38,19 +73,37 @@ function NotesEditor(props) {
         [name]: value,
       };
     });
-  }; 
+  };
 
-  const addNote = () => {
+  const addNote = async () => {
     props.onAdd(note);
-    setNote({ title: "", body: "", author: setAuthor() });
-    fetch('http://localhost:8001/notes', {
-        method: 'POST',
-        headers: { 'Content-Type' : 'application/json' },
-        body: JSON.stringify(note) 
-      })
-      .then(() => {
-        console.log([note.title, note.body, note.author])
+    setNote({ 
+      title: "", 
+      body: "", 
+      author: _user.user
+    });
+    
+    try {
+      /** Stringfiy to JSON the `Notes` and `User` Objects for simplification! */
+      const noteRequestBody = JSON.stringify(postObjectOnSubmit);
+      const response = await fetch(baseURL + "/notes", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: noteRequestBody
       });
+
+      if(response.ok) {
+        console.log("Note submitted");
+        console.log("Request Body: ")
+        console.log(noteRequestBody);
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const handleSubmit = (event) => {
@@ -60,9 +113,7 @@ function NotesEditor(props) {
 
   return (
     <Card style={{ width: "50rem" }} className="p-2 my-3 editor">
-      <Form
-        onSubmit={handleSubmit}
-      >
+      <Form onSubmit={handleSubmit}>
         {/* This will expand upon onClick */}
         <Form.Group className="mb-3" controlId="input.NoteTitle">
           {isExpanded && (

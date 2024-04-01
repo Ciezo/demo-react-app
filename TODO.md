@@ -111,6 +111,6 @@ PHILIPPIANS 4:13
     - [x] Fetch `Notes` based on `userIdPk`
     - [] Fetch `TrashNotes` based on `userIdPk`
     - [] Fetch `ArchiveNotes` based on `userIdPk`
-    - [] POST Notes using fetch()
+    - [x] POST Notes async/await with fetch()
     - [] GET Notes using fetch()
     - [] DELETE Notes using fetch()
