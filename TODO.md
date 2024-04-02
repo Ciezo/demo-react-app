@@ -7,7 +7,7 @@ PHILIPPIANS 4:13
 | <s>Integrate multi-page experience</s>                              | <s>March 8, 2024</s>    | 
 | <s>Implement a mock-up JSON server</s>                              | <s>March 8, 2024</s>    |
 | <s>Finish configuring the Spring Boot api for inkdown</s>           | <s>March 15, 2024</s>   |
-| Integrate Spring Boot Application                                   | April 5, 2024           |
+| <s>Integrate Spring Boot Application</s>                            | <s>April 5, 2024</s>    |
 
 
 
