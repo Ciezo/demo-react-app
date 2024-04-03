@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+### Inkdown - A note taker app with User Authentication and Registration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is developed for the sole purpose of becoming familiar with React.js and its functional components 😊
 
-## Available Scripts
+### Technical Features
 
-In the project directory, you can run:
+1. User Registration and Authentication with a Spring Boot application
+2. Save, edit, remove, and archive notes content
+3. Page navigation
+4. Forms
+5. Validations
+6. CRUD
+7. **Spring Boot Backend Integration**
 
-### `npm start`
+### User Experience
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><b>Fast, simple, and lightweight</b></td>
+            <td>Making personalized texts and notes with Inkdown is easy and simple</td>
+        </tr>
+        <tr>
+            <td><b>Designed to be persistent</b></td>
+            <td>Inkdown can remember saved notes from different users</td>
+        </tr>
+        <tr>
+            <td><b>JWT Session checking</b></td>
+            <td>Inkdown makes sures that its users can have access to their own respective pages</td>
+        </tr>
+        <tr>
+            <td><b>Bootstrap</b></td>
+            <td>User interface is elegant and simple yet intuitive and dynamic</td>
+        </tr>
+        <tr>
+            <td><b>No worries about lost notes</b></td>
+            <td>Using latest techniques and implementation for archiving and restoring. Inkdown can not only archive your removed notes, but also restore them when needed.</td>
+        </tr>
+    </tbody>
+</table>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Checkout the Backend!
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/Ciezo/springboot-springsecurity6-jwt">Spring Boot Backend</a>
