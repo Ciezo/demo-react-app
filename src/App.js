@@ -15,6 +15,7 @@ import DataCollection from "./pages/DataCollection";
 import UserHome from "./pages/UserHome";
 import UserNotesArchive from "./pages/UserNotesArchive";
 import UserNotesTrash from "./pages/UserNotesTrash";
+import MyAccountPage from "./pages/MyAccount";
 import TestSpringBootIntegration from "./test/IntegrateSpringBoot";
 import TestApiCallsUsingFetchToSpringBoot from "./test/ApiCallsUseFetch";
 import TestExtractUserIdPrimaryKey from "./test/ExtractUserIdPrimaryKey";
@@ -62,7 +63,7 @@ function App() {
               <Route path="/user/home" Component={UserHome} />
               <Route path="/user/notes/archive" Component={UserNotesArchive} />
               <Route path="/user/notes/trash" Component={UserNotesTrash} />
-              <Route path="/user/my-account" />
+              <Route path="/user/my-account" Component={MyAccountPage}/>
               <Route path="/test/backend/springboot/calls" Component={TestApiCallsUsingFetchToSpringBoot} />
             </Route>
             {/* ========================================================== */}
