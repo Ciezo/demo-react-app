@@ -114,3 +114,7 @@ PHILIPPIANS 4:13
     - [x] POST Notes async/await with fetch()
     - [x] GET Notes async/await with fetch()
     - [x] DELETE Notes async/await using fetch()
+
+- [] My Account Page 
+    - [] Design and create a "My Account" page 
+    - [] Display the `UserDetails` 
