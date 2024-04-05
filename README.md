@@ -6,11 +6,12 @@ This project is developed for the sole purpose of becoming familiar with React.j
 
 1. User Registration and Authentication with a Spring Boot application
 2. Save, edit, remove, and archive notes content
-3. Page navigation
-4. Forms
-5. Validations
-6. CRUD
-7. **Spring Boot Backend Integration**
+3. Page navigation (using `react-dom-router`)
+4. Authenticated routes
+5. Forms
+6. Validations
+7. CRUD
+8. **Spring Boot Backend Integration**
 
 ### User Experience
 <table>
