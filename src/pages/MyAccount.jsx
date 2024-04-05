@@ -63,7 +63,7 @@ function MyAccountPage() {
               {isError && <p className="lead">{error}</p>}
 
               {/* Render `UserDetails` here */}
-              {!isError && (
+              {!isPending && (
                 <Card>
                   <Card.Body>
                     <Card.Title>
