@@ -30,6 +30,12 @@ function UserHomeNavbar() {
     navigate("/login");
   }
 
+  const refreshPage = () => {
+    // Reference:
+    // https://stackoverflow.com/questions/41481522/how-to-refresh-a-page-using-react-route-link
+    window.location.reload();
+  }
+
   return (
     <>
       <Navbar fixed="top" collapseOnSelect expand="lg" bg="light" data-bs-theme="light" className="border">
@@ -46,7 +52,7 @@ function UserHomeNavbar() {
             <NavDropdown title="More" id="collapsible-nav-dropdown">
               <NavDropdown.Item><b>{`Hello, ${username}!`}</b></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#refresh"><RiRefreshFill /> Refresh</NavDropdown.Item>
+              <NavDropdown.Item href="#refresh" onClick={refreshPage}><RiRefreshFill /> Refresh</NavDropdown.Item>
               <NavDropdown.Item href="#list_view"><MdViewList /> List View</NavDropdown.Item>
               <NavDropdown.Item href="#setting"><AiFillSetting /> Setting</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}><IoLogOut /> Logout</NavDropdown.Item>
