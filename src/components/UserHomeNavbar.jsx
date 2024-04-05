@@ -5,9 +5,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from 'react-bootstrap/Form';
-import { AiFillSetting } from "react-icons/ai";
+// import { AiFillSetting } from "react-icons/ai";
 import { RiRefreshFill } from "react-icons/ri";
-import { MdViewList } from "react-icons/md";
+// import { MdViewList } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
 import { IoLogOut } from "react-icons/io5";
 import { Outlet, Link, useNavigate } from "react-router-dom";
@@ -52,9 +52,9 @@ function UserHomeNavbar() {
             <NavDropdown title="More" id="collapsible-nav-dropdown">
               <NavDropdown.Item><b>{`Hello, ${username}!`}</b></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#refresh" onClick={refreshPage}><RiRefreshFill /> Refresh</NavDropdown.Item>
-              <NavDropdown.Item href="#list_view"><MdViewList /> List View</NavDropdown.Item>
-              <NavDropdown.Item href="#setting"><AiFillSetting /> Setting</NavDropdown.Item>
+              <NavDropdown.Item onClick={refreshPage}><RiRefreshFill /> Refresh</NavDropdown.Item>
+              {/* <NavDropdown.Item><MdViewList /> List View</NavDropdown.Item> */}
+              {/* <NavDropdown.Item><AiFillSetting /> Setting</NavDropdown.Item> */}
               <NavDropdown.Item onClick={handleLogout}><IoLogOut /> Logout</NavDropdown.Item>
             </NavDropdown>
           </Navbar.Collapse>
