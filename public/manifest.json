@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Inkdown",
+  "name": "Inkdown - A note taking application powered by React.js and Spring Boot + Spring Security 6 and JWTs",
   "icons": [
     {
       "src": "favicon.ico",
